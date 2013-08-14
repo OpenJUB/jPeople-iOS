@@ -11,8 +11,18 @@
 @implementation DKAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    // Override point for customization after application launch.
+{    
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"bar"] forBarMetrics:UIBarMetricsDefault];
+    [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"bar"]];
+    [[UITabBar appearance] setSelectionIndicatorImage:[UIImage imageNamed:@"empty"]];
+    
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    
+    if (![prefs objectForKey:@"favorites"]) {
+        [prefs setObject:[NSMutableArray array] forKey:@"favorites"];
+    }
+    
+    [prefs synchronize];
     return YES;
 }
 							

@@ -13,6 +13,7 @@
 @interface DKSearchViewController : UIViewController <UISearchBarDelegate, UIActionSheetDelegate, MFMailComposeViewControllerDelegate> {
     NSMutableArray* foundPeople;
     IBOutlet UISearchBar* searchField;
+    IBOutlet UIImageView* background;
     IBOutlet UITableView* searchResults;
 }
 

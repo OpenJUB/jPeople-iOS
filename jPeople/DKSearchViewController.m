@@ -10,6 +10,17 @@
 
 @implementation DKSearchViewController
 
+-(void) viewWillAppear:(BOOL)animated {
+    
+    if (![self isJacobs]) {
+        searchField.hidden = YES;
+        background.image = [UIImage imageNamed:@"out_of_jacobs"];
+    }
+    else if (foundPeople.count == 0) {
+        searchField.hidden = NO;
+        background.image = [UIImage imageNamed:@"empty_search"];
+    }
+}
 
 - (void)viewDidLoad
 {
@@ -37,10 +48,6 @@
     
     [super viewDidLoad];
     
-    if (![self isJacobs]) {
-#warning Write blocking non-Jacobs users from searching
-    }
-    
     foundPeople = [NSMutableArray array];
 }
 
@@ -54,8 +61,7 @@
 }
 
 -(BOOL) isJacobs {
-#warning Write non-trivial Jacobs check
-    return YES;
+    return [NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://majestix.gislab.jacobs-university.de"] encoding:NSUTF8StringEncoding error:nil] != nil;
 }
 
 -(BOOL) contactExistsWithFirstname:(NSString *)first lastname:(NSString *)last {
@@ -155,7 +161,11 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // if foundPeople count == 0, then call method to display the placeholder
+    if (foundPeople.count > 0)
+        background.hidden = YES;
+    else
+        background.hidden = NO;
+    
     return [foundPeople count];
 }
 
@@ -227,7 +237,7 @@
     
     if (searchBar.text.length < 3)
     {
-        [self.view makeToast:@"Your search request should be not less than 3 characters. Please, try again." duration:2 position:@"center"];
+        [self.view makeToast:@"Please, enter more than 3 characters to search." duration:2 position:@"bottom"];
         [self searchBarCancelButtonClicked:searchBar];
         return;
     }
@@ -265,7 +275,7 @@
         [searchResults reloadData];
         
         if ([foundPeople count] == 0)
-            [self.view makeToast:@"No one found :(" duration:1.5 position:@"center"];
+            [self.view makeToast:@"No one found :(" duration:1.5 position:@"bottom"];
         
         if ([foundPeople count] == 1)
         {

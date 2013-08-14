@@ -15,7 +15,7 @@
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     favorites = [prefs mutableArrayValueForKey:@"favorites"];
     
-    [self.tableView reloadData];
+    [favoritesTable reloadData];
 }
 
 - (void)viewDidLoad
@@ -23,6 +23,7 @@
     self.title = @"Favorites";
     
     [super viewDidLoad];
+    background.image = [UIImage imageNamed:@"empty_favorites"];
     
     // Left
     UIButton *a1 = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -52,8 +53,8 @@
     NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
     NSMutableArray *fUpdated = [NSMutableArray array];
     
-    self.tableView.allowsSelection = NO;
-    self.tableView.scrollEnabled = NO;
+    favoritesTable.allowsSelection = NO;
+    favoritesTable.scrollEnabled = NO;
     
     [self.view makeToastActivity];
     
@@ -99,13 +100,13 @@
     [prefs setObject:fUpdated forKey:@"favorites"];
     [prefs synchronize];
     
-    self.tableView.allowsSelection = YES;
-    self.tableView.scrollEnabled = YES;
+    favoritesTable.allowsSelection = YES;
+    favoritesTable.scrollEnabled = YES;
     
     [self.view hideToastActivity];
     [self.view makeToast:@"Success!" duration:1.5 position:@"bottom"];
     
-    [self.tableView reloadData];
+    [favoritesTable reloadData];
 }
 
 -(IBAction) openMenu {
@@ -184,6 +185,11 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if (favorites.count > 0)
+        background.hidden = YES;
+    else
+        background.hidden = NO;
+    
     return [favorites count];
 }
 
@@ -256,7 +262,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
         [prefs setObject:favs forKey:@"favorites"];
         [prefs synchronize];
         
-        [self.tableView reloadData];
+        [favoritesTable reloadData];
     }
 }
 
@@ -287,7 +293,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
         NSMutableArray *empty = [NSMutableArray array];
         [prefs setObject:empty forKey:@"favorites"];
         [prefs synchronize];
-        [self.tableView reloadData];
+        [favoritesTable reloadData];
         return;
     }
     
@@ -316,14 +322,14 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
         
         else if (buttonIndex == 2) //export to contacts
         {
-            [self.tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
+            [favoritesTable scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
             [self performSelectorInBackground:@selector(allToContacts) withObject:nil];
             [self.view makeToastActivity];
         }
         
         else if (buttonIndex == 3) //update data
         {
-            [self.tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
+            [favoritesTable scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
             [self performSelectorInBackground:@selector(renewData) withObject:nil];
             [self.view makeToastActivity];
         }

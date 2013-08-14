@@ -10,8 +10,11 @@
 #import <MessageUI/MessageUI.h>
 #import <AddressBook/AddressBook.h>
 
-@interface DKFavoritesViewController : UITableViewController <UIActionSheetDelegate, MFMailComposeViewControllerDelegate> {
+@interface DKFavoritesViewController : UIViewController <UIActionSheetDelegate, MFMailComposeViewControllerDelegate> {
     NSMutableArray *favorites;
+    
+    IBOutlet UIImageView* background;
+    IBOutlet UITableView* favoritesTable;
 }
 
 -(IBAction) openMenu;

@@ -21,8 +21,8 @@
 - (void)viewDidLoad
 {
     self.title = @"Favorites";
-    
     [super viewDidLoad];
+    
     background.image = [UIImage imageNamed:@"empty_favorites"];
     
     // Left
@@ -109,8 +109,7 @@
             
             if (error != nil)
             {
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hey hey hey!" message:@"Is somebody chewing on your router's wires? Because you certainly seem to lack Internet connection. Try again later?" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-                [alert show];
+                [self.view makeToast:@"Seems like there's a trouble with your Internet connection... Try again later?" duration:1.5 position:@"bottom"];
                 return;
             }
     
@@ -146,6 +145,7 @@
 -(void) allToContacts {
     
     ABAddressBookRef addressBook = ABAddressBookCreate(); // create address book record
+    BOOL exists = FALSE;
     
     for (NSDictionary *dude in favorites) {
         [self.view makeToastActivity];
@@ -179,12 +179,19 @@
             
             ABAddressBookAddRecord(addressBook, person, nil); //add the new person to the record
         }
+        else {
+            exists = TRUE;
+        }
         
         [self.view hideToastActivity];
     }
     
     ABAddressBookSave(addressBook, nil); //save the records
-    NSLog(@"done");
+    
+    if (!exists)
+        [self.view makeToast:@"Success!" duration:1.5 position:@"bottom"];
+    else
+        [self.view makeToast:@"Some contacts already exist and were not added." duration:1.5 position:@"bottom"];
 }
 
 -(BOOL) contactExistsWithFirstname:(NSString *)first lastname:(NSString *)last {
@@ -228,7 +235,6 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     NSDictionary *person = [favorites objectAtIndex:indexPath.row];
-    NSLog(@"%@",person);
     
     UIView *college = [cell viewWithTag:11];
     
@@ -367,10 +373,39 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     else
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"There are no people in the list right now. Please, add some people before calling group actions." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-        [alert show];
+        [self.view makeToast:@"There are no people in the list right now. Please, add some people before calling group actions." duration:1.5 position:@"bottom"];
     }
     
+}
+
+#pragma mark - Mail controller delegate
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
+{
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            NSLog(@"Mail cancelled: you cancelled the operation and no email message was queued.");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"Mail saved: you saved the email message in the drafts folder.");
+            [self.view makeToast:@"Saved in drafts." duration:1.5 position:@"bottom"];
+            break;
+        case MFMailComposeResultSent:
+            NSLog(@"Mail send: the email message is queued in the outbox. It is ready to send.");
+            [self.view makeToast:@"Message sent! ;)" duration:1.5 position:@"bottom"];
+            break;
+        case MFMailComposeResultFailed:
+            NSLog(@"Mail failed: the email message was not saved or queued, possibly due to an error.");
+            [self.view makeToast:@"Sending failed. Maybe Internet problems? :(" duration:1.5 position:@"bottom"];
+            break;
+        default:
+            NSLog(@"Mail not sent.");
+            break;
+    }
+    
+    // Remove the mail view
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 

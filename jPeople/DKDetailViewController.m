@@ -8,8 +8,6 @@
 
 #import "DKDetailViewController.h"
 
-#warning Make iPhone 5 / professor compliant
-
 @implementation DKDetailViewController
 
 @synthesize person;
@@ -97,7 +95,9 @@
     }
     else {
         NSLog(@"Downloading image...");
-        UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[person objectForKey:@"photo_url"]]]];
+        
+        NSData* data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[person objectForKey:@"photo_url"]]];
+        UIImage *image = [UIImage imageWithData:data];
         
         if(image) {
             float w = [image size].width;
@@ -113,7 +113,7 @@
             
             [photo setFrame:CGRectMake(photo.frame.origin.x, photo.frame.origin.y+(128-h)/2, w,h)];
             photo.image = image;
-            [person setValue:[NSData dataWithContentsOfURL:[NSURL URLWithString:[person objectForKey:@"photo_url"]]] forKey:@"photo"];
+            [person setValue:data forKey:@"photo"];
         }
     }
 }

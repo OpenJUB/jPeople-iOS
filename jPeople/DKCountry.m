@@ -27,19 +27,13 @@
     }
     manager.countryCodesByName = [codesByName copy];
     
-    UIImage *result;
-    if ([country isEqual:@"USA"]) {
-        result = [UIImage imageNamed:@"us.png"];
-    }
-    else {
-        result = [UIImage imageNamed:[manager.countryCodesByName valueForKey:country]];
-    }
+    UIImage *result = [UIImage imageNamed:[manager.countryCodesByName valueForKey:country]];
     
     if (result)
         return result;
     else {
         NSLog(@"Warning! Image for country (%@) was not found!",country);
-        return [UIImage imageNamed:@"_UNICEF"];
+        return [UIImage imageNamed:@"_United-Nations"];
     }
 }
 

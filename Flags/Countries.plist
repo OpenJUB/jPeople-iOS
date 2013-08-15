@@ -89,7 +89,7 @@
 	<key>CH</key>
 	<string>Switzerland</string>
 	<key>CI</key>
-	<string>Cote D'Ivoire (Ivory Coast)</string>
+	<string>Cote D&apos;Ivoire (Ivory Coast)</string>
 	<key>CK</key>
 	<string>Cook Islands</string>
 	<key>CL</key>
@@ -155,7 +155,7 @@
 	<key>GA</key>
 	<string>Gabon</string>
 	<key>GB</key>
-	<string>Great Britain (UK)</string>
+	<string>United Kingdom</string>
 	<key>GD</key>
 	<string>Grenada</string>
 	<key>GE</key>
@@ -229,7 +229,7 @@
 	<key>JO</key>
 	<string>Jordan</string>
 	<key>JP</key>
-	<string>japan</string>
+	<string>Japan</string>
 	<key>KE</key>
 	<string>Kenya</string>
 	<key>KG</key>
@@ -293,7 +293,7 @@
 	<key>ML</key>
 	<string>Mali</string>
 	<key>MM</key>
-	<string>Myanmar (Burma)</string>
+	<string>Myanmar</string>
 	<key>MN</key>
 	<string>Mongolia</string>
 	<key>MO</key>
@@ -367,7 +367,7 @@
 	<key>PR</key>
 	<string>Puerto Rico</string>
 	<key>PS</key>
-	<string>Palestinian Territory, Occupied</string>
+	<string>Palestine</string>
 	<key>PT</key>
 	<string>Portugal</string>
 	<key>PW</key>
@@ -381,9 +381,9 @@
 	<key>RO</key>
 	<string>Romania</string>
 	<key>RS</key>
-	<string>Serbia (Yugoslavia)</string>
+	<string>Serbia</string>
 	<key>RU</key>
-	<string>Russian Federation</string>
+	<string>Russia</string>
 	<key>RW</key>
 	<string>Rwanda</string>
 	<key>SA</key>
@@ -449,7 +449,7 @@
 	<key>TR</key>
 	<string>Turkey</string>
 	<key>TT</key>
-	<string>Trinidad &amp; Tobago</string>
+	<string>Trinidad and Tobago</string>
 	<key>TV</key>
 	<string>Tuvalu</string>
 	<key>TW</key>
@@ -460,12 +460,10 @@
 	<string>Ukraine</string>
 	<key>UG</key>
 	<string>Uganda</string>
-	<key>GB</key>
-	<string>United Kingdom</string>
 	<key>UM</key>
 	<string>United States Minor Outlying Islands</string>
 	<key>US</key>
-	<string>United States (USA)</string>
+	<string>USA</string>
 	<key>UY</key>
 	<string>Uruguay</string>
 	<key>UZ</key>

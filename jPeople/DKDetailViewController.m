@@ -28,6 +28,9 @@
     UIBarButtonItem * barButton = [[UIBarButtonItem alloc] initWithCustomView:a1];
     self.navigationItem.leftBarButtonItem = barButton;
 
+    // Center
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"person"]];
+    
     // Right
     BOOL exists = FALSE;
     

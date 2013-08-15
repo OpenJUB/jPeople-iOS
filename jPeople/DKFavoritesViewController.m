@@ -39,11 +39,40 @@
     // Center    
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"favorites"]];
     
-    self.navigationItem.rightBarButtonItem = [self editButtonItem];
+    // Right
+    self.navigationItem.rightBarButtonItem = [self rightBarButton];
     
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     favorites = [prefs mutableArrayValueForKey:@"favorites"];
+}
 
+-(UIBarButtonItem*) rightBarButton {
+    
+    UIBarButtonItem * barButton;
+    
+    if (favoritesTable.isEditing) {
+        UIButton *a1 = [UIButton buttonWithType:UIButtonTypeCustom];
+        [a1 setFrame:CGRectMake(0.0f, 0.0f, 32.0f, 32.0f)];
+        [a1 addTarget:self action:@selector(toggleEditing) forControlEvents:UIControlEventTouchUpInside];
+        [a1 setImage:[UIImage imageNamed:@"done"] forState:UIControlStateNormal];
+        
+        barButton = [[UIBarButtonItem alloc] initWithCustomView:a1];
+    }
+    else {
+        UIButton *a1 = [UIButton buttonWithType:UIButtonTypeCustom];
+        [a1 setFrame:CGRectMake(0.0f, 0.0f, 32.0f, 32.0f)];
+        [a1 addTarget:self action:@selector(toggleEditing) forControlEvents:UIControlEventTouchUpInside];
+        [a1 setImage:[UIImage imageNamed:@"edit"] forState:UIControlStateNormal];
+        
+        barButton = [[UIBarButtonItem alloc] initWithCustomView:a1];
+    }
+    
+    return barButton;
+}
+
+-(void) toggleEditing {
+    [favoritesTable setEditing:!favoritesTable.editing];
+    self.navigationItem.rightBarButtonItem = [self rightBarButton];
 }
 
 -(void) renewData {

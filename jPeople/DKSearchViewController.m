@@ -61,6 +61,7 @@
 }
 
 -(BOOL) isJacobs {
+#warning Check for Jacobs somehow different (this one freezes UI badly).
     return [NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://majestix.gislab.jacobs-university.de"] encoding:NSUTF8StringEncoding error:nil] != nil;
 }
 
@@ -108,9 +109,24 @@
     [self.view makeToast:@"Success!"];
 }
 
--(void) allToContacts {
+-(void) checkContactsPermission {
+    ABAddressBookRef addressBookRef = ABAddressBookCreateWithOptions(NULL, NULL);
     
-    ABAddressBookRef addressBook = ABAddressBookCreate(); // create address book record
+    if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusNotDetermined) {
+        ABAddressBookRequestAccessWithCompletion(addressBookRef, ^(bool granted, CFErrorRef error) {
+            [self allToContacts:addressBookRef];
+        });
+    }
+    else if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusAuthorized) {
+        [self allToContacts:addressBookRef];
+    }
+    else {
+        [self.view makeToast:@"jPeople doesn't have permission to access Contacts :(" duration:1.5 position:@"bottom"];
+    }
+}
+
+-(void) allToContacts:(ABAddressBookRef) addressBook {
+
     BOOL exists = FALSE;
     
     for (NSDictionary *dude in foundPeople) {
@@ -182,7 +198,7 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    NSDictionary *person = [foundPeople objectAtIndex:indexPath.row];
+    NSMutableDictionary *person = [[foundPeople objectAtIndex:indexPath.row] mutableCopy];
     
     UIView *college = [cell viewWithTag:11];
     
@@ -202,9 +218,9 @@
     UIImageView* country = (UIImageView*)[cell viewWithTag:12];
     country.image = [DKCountry iconForCountry:[person objectForKey:@"country"]];
     
+    
     UILabel *name = (UILabel*)[cell viewWithTag:13];
     name.text = [NSString stringWithFormat:@"%@ %@",[person objectForKey:@"fname"],[person objectForKey:@"lname"]];
-    
     return cell;
 }
 
@@ -336,7 +352,7 @@
         else if (buttonIndex == 2) //export to contacts
         {
             [searchResults scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
-            [self performSelectorInBackground:@selector(allToContacts) withObject:nil];
+            [self performSelectorInBackground:@selector(checkContactsPermission) withObject:nil];
             [self.view makeToastActivity];
         }
         

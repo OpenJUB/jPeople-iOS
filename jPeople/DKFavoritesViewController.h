@@ -20,7 +20,8 @@
 -(IBAction) openMenu;
 -(void) renewData;
 -(void) allToContacts;
+-(void) checkContactsPermission;
+-(void) allToContacts: (ABAddressBookRef)addressBook;
 -(BOOL) contactExistsWithFirstname: (NSString*) first lastname: (NSString*)last;
-
 
 @end

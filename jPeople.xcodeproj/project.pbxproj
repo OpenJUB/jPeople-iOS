@@ -1315,7 +1315,7 @@
 				0A6C321017BD4BB9005FE944 /* Assets */,
 				0A64D8AD17375B5000B9A679 /* jPeople */,
 				0A64D8A617375B5000B9A679 /* Frameworks */,
-				0A64D8D817375F0600B9A679 /* Images */,
+				0A64D8EA17377D5A00B9A679 /* Flags */,
 				0A64D8A517375B5000B9A679 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -1373,14 +1373,6 @@
 				0A64D8B517375B5000B9A679 /* jPeople-Prefix.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		0A64D8D817375F0600B9A679 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				0A64D8EA17377D5A00B9A679 /* Flags */,
-			);
-			name = Images;
 			sourceTree = "<group>";
 		};
 		0A64D8EA17377D5A00B9A679 /* Flags */ = {

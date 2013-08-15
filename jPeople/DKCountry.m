@@ -27,7 +27,7 @@
     }
     manager.countryCodesByName = [codesByName copy];
     
-    UIImage *result = [UIImage imageNamed:[manager.countryCodesByName valueForKey:country]];
+    UIImage *result = [UIImage imageNamed:[[manager.countryCodesByName valueForKey:country] lowercaseString]];
     
     if (result)
         return result;

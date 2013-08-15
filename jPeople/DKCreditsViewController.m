@@ -26,6 +26,7 @@
     
     // Move buttons if iPhone 5
     if (IS_WIDESCREEN) {
+        NSLog(@"Widescreen: moving buttons.");
         MOVE(dimaButton,0,39);
         MOVE(stefanButton,0,39);
         MOVE(nyanButton,0,39);
@@ -38,7 +39,6 @@
     
     nerdPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"nerd" ofType:@"m4a"]] error:nil];
     [nerdPlayer prepareToPlay];
-
 }
 
 -(IBAction) goDima {

@@ -142,9 +142,24 @@
     [menu showFromTabBar:self.tabBarController.tabBar];
 }
 
--(void) allToContacts {
+-(void) checkContactsPermission {
+    ABAddressBookRef addressBookRef = ABAddressBookCreateWithOptions(NULL, NULL);
     
-    ABAddressBookRef addressBook = ABAddressBookCreate(); // create address book record
+    if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusNotDetermined) {
+        ABAddressBookRequestAccessWithCompletion(addressBookRef, ^(bool granted, CFErrorRef error) {
+            [self allToContacts:addressBookRef];
+        });
+    }
+    else if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusAuthorized) {
+        [self allToContacts:addressBookRef];
+    }
+    else {
+        [self.view makeToast:@"jPeople doesn't have permission to access Contacts :(" duration:1.5 position:@"bottom"];
+    }
+}
+
+-(void) allToContacts:(ABAddressBookRef)addressBook {
+    
     BOOL exists = FALSE;
     
     for (NSDictionary *dude in favorites) {
@@ -358,7 +373,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
         else if (buttonIndex == 2) //export to contacts
         {
             [favoritesTable scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
-            [self performSelectorInBackground:@selector(allToContacts) withObject:nil];
+            [self performSelectorInBackground:@selector(checkContactsPermission) withObject:nil];
             [self.view makeToastActivity];
         }
         

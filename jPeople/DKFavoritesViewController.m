@@ -18,12 +18,35 @@
     [favoritesTable reloadData];
 }
 
+-(void) viewWillDisappear:(BOOL)animated {
+    
+    for (ALAlertBanner* banner in [ALAlertBanner alertBannersInView:self.view]) {
+        [banner hide];
+         
+    }
+}
+
 - (void)viewDidLoad
 {
     self.title = @"Favorites";
     [super viewDidLoad];
     
     background.image = [UIImage imageNamed:@"empty_favorites"];
+    
+    //Hack to remove header on iOS7
+    CGRect frame = favoritesTable.tableHeaderView.frame;
+    frame.size.height = 1;
+    UIView *headerView = [[UIView alloc] initWithFrame:frame];
+    [favoritesTable setTableHeaderView:headerView];
+    
+    /*//Swipe between tabs
+    UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(tappedRightButton:)];
+    [swipeLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
+    [self.view addGestureRecognizer:swipeLeft];
+    
+    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(tappedLeftButton:)];
+    [swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
+    [self.view addGestureRecognizer:swipeRight];*/
     
     // Left
     UIButton *a1 = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -84,57 +107,55 @@
     
     favoritesTable.allowsSelection = NO;
     favoritesTable.scrollEnabled = NO;
-    
-    [self.view makeToastActivity];
-    
-    int nQ = ([favorites count]+19)/20;
-    NSLog(@"%i queries to update the data.",nQ);
-    
-    [self.view makeToastActivity];
-    
-    for (int i=0; i<nQ; i++)
-    {
-        NSString *query = @"http://majestix.gislab.jacobs-university.de/jPeople/ajax.php?action=fullAutoComplete&str=account:";
-        
-        for (int k = i*20; k < MIN(i*20+20,[favorites count]); k++)
-        {
-            query = [query stringByAppendingString:[NSString stringWithFormat:@"%@,",[[favorites objectAtIndex:k]objectForKey:@"account"]]];
-        }
-        
-        query = [query substringToIndex:[query length]-1]; // remove the last comma
-        
-        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:query]];
-        
-        [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData* data, NSError* error) {
-            
-            if (error != nil)
-            {
-                [self.view makeToast:@"Seems like there's a trouble with your Internet connection... Try again later?" duration:1.5 position:@"bottom"];
-                return;
-            }
-    
-            NSDictionary *jsonRoot = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-            
-            for (NSDictionary *person in [jsonRoot objectForKey:@"records"])
-            {
-                [fUpdated addObject:person];
-            }
 
-        }];
-        
+    NSString *query = @"http://dcode.tk/php/redirect.php?action=fullAutoComplete&str=account:";
+    
+    for (int k = 0; k < [favorites count]; k++)
+    {
+        query = [query stringByAppendingString:[NSString stringWithFormat:@"%@,",[[favorites objectAtIndex:k]objectForKey:@"account"]]];
     }
     
-    [self.view hideToastActivity];
-    [prefs setObject:fUpdated forKey:@"favorites"];
-    [prefs synchronize];
+    query = [query substringToIndex:[query length]-1]; // remove the last comma
+    //NSLog(@"%@",query);
     
-    favoritesTable.allowsSelection = YES;
-    favoritesTable.scrollEnabled = YES;
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:query]];
     
-    [self.view hideToastActivity];
-    [self.view makeToast:@"Success!" duration:1.5 position:@"bottom"];
+    [self.view makeToastActivity];
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData* data, NSError* error) {
+        
+        if (error != nil)
+        {
+            ALAlertBanner *banner = [ALAlertBanner alertBannerForView:self.view style:ALAlertBannerStyleFailure position:ALAlertBannerPositionTop title:@"Ouch!" subtitle:@"Looks like you have a problem with Internet connection... Check it and try again later? :)"];
+            [banner show];
+            return;
+        }
+
+        NSDictionary *jsonRoot = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        
+        for (NSDictionary *person in [jsonRoot objectForKey:@"records"])
+        {
+            [fUpdated addObject:person];
+        }
+        
+        [prefs setObject:fUpdated forKey:@"favorites"];
+        [prefs synchronize];
+        
+        [favorites removeAllObjects];
+        [favorites addObjectsFromArray:fUpdated];
+        
+        favoritesTable.allowsSelection = YES;
+        favoritesTable.scrollEnabled = YES;
+        
+        [self.view hideToastActivity];
+        
+        ALAlertBanner *banner = [ALAlertBanner alertBannerForView:self.view style:ALAlertBannerStyleSuccess position:ALAlertBannerPositionTop title:@"Success!" subtitle:nil];
+        [banner show];
+        
+        [favoritesTable reloadData];
+
+    }];
     
-    [favoritesTable reloadData];
+    
 }
 
 -(IBAction) openMenu {
@@ -147,19 +168,29 @@
     
     if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusNotDetermined) {
         ABAddressBookRequestAccessWithCompletion(addressBookRef, ^(bool granted, CFErrorRef error) {
-            [self allToContacts:addressBookRef];
+            if (granted) {
+                [self allToContacts:addressBookRef];
+            }
+            else {
+                [self.view hideToastActivity];
+                ALAlertBanner *banner = [ALAlertBanner alertBannerForView:self.view style:ALAlertBannerStyleFailure position:ALAlertBannerPositionTop title:@"Ouch!" subtitle:@"jPeople doesn't have permissions to modify the contacts :("];
+                [banner show];
+            }
         });
     }
     else if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusAuthorized) {
         [self allToContacts:addressBookRef];
     }
     else {
-        [self.view makeToast:@"jPeople doesn't have permission to access Contacts :(" duration:1.5 position:@"bottom"];
+        ALAlertBanner *banner = [ALAlertBanner alertBannerForView:self.view style:ALAlertBannerStyleFailure position:ALAlertBannerPositionTop title:@"Ouch!" subtitle:@"jPeople doesn't have permissions to modify the contacts :("];
+         [banner show];
+        [self.view hideToastActivity];
     }
 }
 
--(void) allToContacts:(ABAddressBookRef)addressBook {
+-(void) allToContacts:(ABAddressBookRef) addressBook {
     
+    NSLog(@"Adding to contacts...");
     BOOL exists = FALSE;
     
     for (NSDictionary *dude in favorites) {
@@ -197,16 +228,20 @@
         else {
             exists = TRUE;
         }
-        
-        [self.view hideToastActivity];
     }
     
     ABAddressBookSave(addressBook, nil); //save the records
     
-    if (!exists)
-        [self.view makeToast:@"Success!" duration:1.5 position:@"bottom"];
-    else
-        [self.view makeToast:@"Some contacts already exist and were not added." duration:1.5 position:@"bottom"];
+    
+    [self.view hideToastActivity];
+    if (!exists) {
+        ALAlertBanner *banner = [ALAlertBanner alertBannerForView:self.view style:ALAlertBannerStyleSuccess position:ALAlertBannerPositionTop title:@"Success!" subtitle:nil];
+        [banner show];
+    }
+    else {
+        ALAlertBanner *banner = [ALAlertBanner alertBannerForView:self.view style:ALAlertBannerStyleSuccess position:ALAlertBannerPositionTop title:@"Success!" subtitle:@"Some people were already in the contact list and were not added."];
+        [banner show];
+    }
 }
 
 -(BOOL) contactExistsWithFirstname:(NSString *)first lastname:(NSString *)last {
@@ -344,6 +379,10 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
         [prefs setObject:empty forKey:@"favorites"];
         [prefs synchronize];
         [favoritesTable reloadData];
+        
+        ALAlertBanner* banner = [ALAlertBanner alertBannerForView:self.view style:ALAlertBannerStyleSuccess position:ALAlertBannerPositionTop title:@"Success!" subtitle:nil];
+        [banner show];
+        
         return;
     }
     
@@ -388,7 +427,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     else
     {
-        [self.view makeToast:@"There are no people in the list right now. Please, add some people before calling group actions." duration:1.5 position:@"bottom"];
+        ALAlertBanner *banner = [ALAlertBanner alertBannerForView:self.view style:ALAlertBannerStyleFailure position:ALAlertBannerPositionTop title:@"Ouch!" subtitle:@"The list is empty right now. Please, add someone before calling the group actions."];
+        [banner show];
     }
     
 }
@@ -397,6 +437,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 
 - (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
 {
+    ALAlertBanner *banner;
+    
     switch (result)
     {
         case MFMailComposeResultCancelled:
@@ -404,15 +446,18 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
             break;
         case MFMailComposeResultSaved:
             NSLog(@"Mail saved: you saved the email message in the drafts folder.");
-            [self.view makeToast:@"Saved in drafts." duration:1.5 position:@"bottom"];
+             banner = [ALAlertBanner alertBannerForView:self.view style:ALAlertBannerStyleSuccess position:ALAlertBannerPositionTop title:@"Saved in drafts.." subtitle:nil];
+            [banner show];
             break;
         case MFMailComposeResultSent:
             NSLog(@"Mail send: the email message is queued in the outbox. It is ready to send.");
-            [self.view makeToast:@"Message sent! ;)" duration:1.5 position:@"bottom"];
+            banner = [ALAlertBanner alertBannerForView:self.view style:ALAlertBannerStyleSuccess position:ALAlertBannerPositionTop title:@"Message sent! ;)" subtitle:nil];
+            [banner show];
             break;
         case MFMailComposeResultFailed:
             NSLog(@"Mail failed: the email message was not saved or queued, possibly due to an error.");
-            [self.view makeToast:@"Sending failed. Maybe Internet problems? :(" duration:1.5 position:@"bottom"];
+            banner = [ALAlertBanner alertBannerForView:self.view style:ALAlertBannerStyleFailure position:ALAlertBannerPositionTop title:@"Ouch!" subtitle:@"Sending failed! Maybe Internet problems? :("];
+            [banner show];
             break;
         default:
             NSLog(@"Mail not sent.");
@@ -421,6 +466,60 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     // Remove the mail view
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)tappedRightButton:(id)sender
+{
+    int selectedIndex = [self.tabBarController selectedIndex];
+    
+    if (selectedIndex + 1 >= [[self.tabBarController viewControllers] count]) {
+        return;
+    }
+    
+    /*
+     UIView * fromView = self.view;
+     UIView * toView = [[self.tabBarController.viewControllers objectAtIndex:selectedIndex+1] view];
+    
+    // Transition using a page curl.
+    [UIView transitionFromView:fromView
+                        toView:toView
+                      duration:0.5
+                       options:UIViewAnimationOptionTransitionFlipFromRight
+                    completion:^(BOOL finished) {
+                        if (finished) {
+                            self.tabBarController.selectedIndex = selectedIndex+1;
+                        }
+                    }];
+     */
+    
+    self.tabBarController.selectedIndex = selectedIndex+1;
+}
+
+- (IBAction)tappedLeftButton:(id)sender
+{
+    int selectedIndex = [self.tabBarController selectedIndex];
+    
+    if (selectedIndex - 1 < 0) {
+        return;
+    }
+    
+    /*
+     UIView * fromView = self.view;
+    UIView * toView = [[self.tabBarController.viewControllers objectAtIndex:selectedIndex-1] view];
+    
+    // Transition using a page curl.
+    [UIView transitionFromView:fromView
+                        toView:toView
+                      duration:0.5
+                       options:UIViewAnimationOptionTransitionFlipFromLeft
+                    completion:^(BOOL finished) {
+                        if (finished) {
+                            self.tabBarController.selectedIndex = selectedIndex-1;
+                        }
+                    }];
+     */
+
+    self.tabBarController.selectedIndex = selectedIndex-1;
 }
 
 

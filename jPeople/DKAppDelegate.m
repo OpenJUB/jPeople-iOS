@@ -10,11 +10,27 @@
 
 @implementation DKAppDelegate
 
+void uncaughtExceptionHandler(NSException *exception) {
+    NSLog(@"CRASH: %@", exception);
+    NSLog(@"Stack Trace: %@", [exception callStackSymbols]);
+    // Internal error reporting
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{    
-    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"bar"] forBarMetrics:UIBarMetricsDefault];
-    [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"bar"]];
-    [[UITabBar appearance] setSelectionIndicatorImage:[UIImage imageNamed:@"empty"]];
+{
+    [[UISearchBar appearance] setBackgroundImage:[UIImage imageNamed:@"bar"]];
+    
+    if (!SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
+        // set "flat" backgrounds for iOS6
+        [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"bar"] forBarMetrics:UIBarMetricsDefault];
+        [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"bar"]];
+        [[UITabBar appearance] setSelectionIndicatorImage:[UIImage imageNamed:@"empty"]];
+    }
+    else {
+        [[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
+    }
+    
+    NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
     
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     

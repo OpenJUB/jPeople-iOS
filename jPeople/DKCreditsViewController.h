@@ -23,5 +23,4 @@
 -(IBAction) goStefan;
 -(IBAction) playNyanCat;
 -(IBAction) playNerd;
-
 @end

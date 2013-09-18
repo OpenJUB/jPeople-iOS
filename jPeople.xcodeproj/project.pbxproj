@@ -642,6 +642,17 @@
 		0A96334717B7EB1C005CA8ED /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A96334617B7EB1C005CA8ED /* Default-568h@2x.png */; };
 		0A96334A17B7EDA2005CA8ED /* bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A96334817B7EDA2005CA8ED /* bar.png */; };
 		0A96334B17B7EDA2005CA8ED /* bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A96334917B7EDA2005CA8ED /* bar@2x.png */; };
+		0AAA08BA17CD24B200740E74 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AAA08B917CD24B200740E74 /* QuartzCore.framework */; };
+		0AF358A717E9F25E0090548C /* ALAlertBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3589B17E9F25E0090548C /* ALAlertBanner.m */; };
+		0AF358A817E9F25E0090548C /* ALAlertBannerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3589D17E9F25E0090548C /* ALAlertBannerManager.m */; };
+		0AF358A917E9F25E0090548C /* bannerAlert.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AF3589F17E9F25E0090548C /* bannerAlert.png */; };
+		0AF358AA17E9F25E0090548C /* bannerAlert@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AF358A017E9F25E0090548C /* bannerAlert@2x.png */; };
+		0AF358AB17E9F25E0090548C /* bannerFailure.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AF358A117E9F25E0090548C /* bannerFailure.png */; };
+		0AF358AC17E9F25E0090548C /* bannerFailure@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AF358A217E9F25E0090548C /* bannerFailure@2x.png */; };
+		0AF358AD17E9F25E0090548C /* bannerNotify.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AF358A317E9F25E0090548C /* bannerNotify.png */; };
+		0AF358AE17E9F25E0090548C /* bannerNotify@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AF358A417E9F25E0090548C /* bannerNotify@2x.png */; };
+		0AF358AF17E9F25E0090548C /* bannerSuccess.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AF358A517E9F25E0090548C /* bannerSuccess.png */; };
+		0AF358B017E9F25E0090548C /* bannerSuccess@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AF358A617E9F25E0090548C /* bannerSuccess@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1290,6 +1301,20 @@
 		0A96334617B7EB1C005CA8ED /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		0A96334817B7EDA2005CA8ED /* bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bar.png; sourceTree = "<group>"; };
 		0A96334917B7EDA2005CA8ED /* bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bar@2x.png"; sourceTree = "<group>"; };
+		0AAA08B917CD24B200740E74 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		0AF3589917E9F25E0090548C /* ALAlertBanner+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALAlertBanner+Private.h"; sourceTree = "<group>"; };
+		0AF3589A17E9F25E0090548C /* ALAlertBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALAlertBanner.h; sourceTree = "<group>"; };
+		0AF3589B17E9F25E0090548C /* ALAlertBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALAlertBanner.m; sourceTree = "<group>"; };
+		0AF3589C17E9F25E0090548C /* ALAlertBannerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALAlertBannerManager.h; sourceTree = "<group>"; };
+		0AF3589D17E9F25E0090548C /* ALAlertBannerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALAlertBannerManager.m; sourceTree = "<group>"; };
+		0AF3589F17E9F25E0090548C /* bannerAlert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bannerAlert.png; sourceTree = "<group>"; };
+		0AF358A017E9F25E0090548C /* bannerAlert@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bannerAlert@2x.png"; sourceTree = "<group>"; };
+		0AF358A117E9F25E0090548C /* bannerFailure.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bannerFailure.png; sourceTree = "<group>"; };
+		0AF358A217E9F25E0090548C /* bannerFailure@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bannerFailure@2x.png"; sourceTree = "<group>"; };
+		0AF358A317E9F25E0090548C /* bannerNotify.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bannerNotify.png; sourceTree = "<group>"; };
+		0AF358A417E9F25E0090548C /* bannerNotify@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bannerNotify@2x.png"; sourceTree = "<group>"; };
+		0AF358A517E9F25E0090548C /* bannerSuccess.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bannerSuccess.png; sourceTree = "<group>"; };
+		0AF358A617E9F25E0090548C /* bannerSuccess@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bannerSuccess@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1297,6 +1322,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AAA08BA17CD24B200740E74 /* QuartzCore.framework in Frameworks */,
 				0A64D8A817375B5000B9A679 /* UIKit.framework in Frameworks */,
 				0A64D8AA17375B5000B9A679 /* Foundation.framework in Frameworks */,
 				0A6C321617BD5598005FE944 /* AVFoundation.framework in Frameworks */,
@@ -1331,6 +1357,7 @@
 		0A64D8A617375B5000B9A679 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0AAA08B917CD24B200740E74 /* QuartzCore.framework */,
 				0A6C321517BD5598005FE944 /* AVFoundation.framework */,
 				0A64D8E517376B5600B9A679 /* AddressBook.framework */,
 				0A64D8E317376B4D00B9A679 /* MessageUI.framework */,
@@ -1365,6 +1392,7 @@
 		0A64D8AE17375B5000B9A679 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0AF3589817E9F25E0090548C /* ALAlertBanner */,
 				0A64D8DD1737689400B9A679 /* Toast+UIView.h */,
 				0A64D8DE1737689400B9A679 /* Toast+UIView.m */,
 				0A64D8AF17375B5000B9A679 /* jPeople-Info.plist */,
@@ -2016,6 +2044,34 @@
 			name = Assets;
 			sourceTree = "<group>";
 		};
+		0AF3589817E9F25E0090548C /* ALAlertBanner */ = {
+			isa = PBXGroup;
+			children = (
+				0AF3589917E9F25E0090548C /* ALAlertBanner+Private.h */,
+				0AF3589A17E9F25E0090548C /* ALAlertBanner.h */,
+				0AF3589B17E9F25E0090548C /* ALAlertBanner.m */,
+				0AF3589C17E9F25E0090548C /* ALAlertBannerManager.h */,
+				0AF3589D17E9F25E0090548C /* ALAlertBannerManager.m */,
+				0AF3589E17E9F25E0090548C /* Images */,
+			);
+			path = ALAlertBanner;
+			sourceTree = "<group>";
+		};
+		0AF3589E17E9F25E0090548C /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				0AF3589F17E9F25E0090548C /* bannerAlert.png */,
+				0AF358A017E9F25E0090548C /* bannerAlert@2x.png */,
+				0AF358A117E9F25E0090548C /* bannerFailure.png */,
+				0AF358A217E9F25E0090548C /* bannerFailure@2x.png */,
+				0AF358A317E9F25E0090548C /* bannerNotify.png */,
+				0AF358A417E9F25E0090548C /* bannerNotify@2x.png */,
+				0AF358A517E9F25E0090548C /* bannerSuccess.png */,
+				0AF358A617E9F25E0090548C /* bannerSuccess@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2099,6 +2155,7 @@
 				0A64DB3F17377D5D00B9A679 /* _Scotland.png in Resources */,
 				0A64DB4017377D5D00B9A679 /* _Somaliland.png in Resources */,
 				0A64DB4117377D5D00B9A679 /* _Tristan da Cunha.png in Resources */,
+				0AF358AF17E9F25E0090548C /* bannerSuccess.png in Resources */,
 				0A64DB4217377D5D00B9A679 /* _UNESCO.png in Resources */,
 				0A64DB4317377D5D00B9A679 /* _UNICEF.png in Resources */,
 				0A64DB4417377D5D00B9A679 /* _United-Nations.png in Resources */,
@@ -2118,6 +2175,7 @@
 				0A64DB5217377D5D00B9A679 /* ar.png in Resources */,
 				0A64DB5317377D5D00B9A679 /* as.png in Resources */,
 				0A64DB5417377D5D00B9A679 /* at.png in Resources */,
+				0AF358AB17E9F25E0090548C /* bannerFailure.png in Resources */,
 				0A64DB5517377D5D00B9A679 /* au.png in Resources */,
 				0A64DB5617377D5D00B9A679 /* aw.png in Resources */,
 				0A64DB5717377D5D00B9A679 /* ax.png in Resources */,
@@ -2369,6 +2427,7 @@
 				0A64DC4D17377D5D00B9A679 /* ca@2x.png in Resources */,
 				0A64DC4E17377D5D00B9A679 /* cc@2x.png in Resources */,
 				0A64DC4F17377D5D00B9A679 /* cd@2x.png in Resources */,
+				0AF358B017E9F25E0090548C /* bannerSuccess@2x.png in Resources */,
 				0A64DC5017377D5D00B9A679 /* cf@2x.png in Resources */,
 				0A64DC5117377D5D00B9A679 /* cg@2x.png in Resources */,
 				0A64DC5217377D5D00B9A679 /* ch@2x.png in Resources */,
@@ -2387,6 +2446,7 @@
 				0A64DC5F17377D5D00B9A679 /* cz@2x.png in Resources */,
 				0A64DC6017377D5D00B9A679 /* de@2x.png in Resources */,
 				0A64DC6117377D5D00B9A679 /* dj@2x.png in Resources */,
+				0AF358AD17E9F25E0090548C /* bannerNotify.png in Resources */,
 				0A64DC6217377D5D00B9A679 /* dk@2x.png in Resources */,
 				0A64DC6317377D5D00B9A679 /* dm@2x.png in Resources */,
 				0A64DC6417377D5D00B9A679 /* do@2x.png in Resources */,
@@ -2433,6 +2493,7 @@
 				0A64DC8D17377D5D00B9A679 /* ie@2x.png in Resources */,
 				0A64DC8E17377D5D00B9A679 /* il@2x.png in Resources */,
 				0A64DC8F17377D5D00B9A679 /* im@2x.png in Resources */,
+				0AF358AE17E9F25E0090548C /* bannerNotify@2x.png in Resources */,
 				0A64DC9017377D5D00B9A679 /* in@2x.png in Resources */,
 				0A64DC9117377D5D00B9A679 /* io@2x.png in Resources */,
 				0A64DC9217377D5D00B9A679 /* iq@2x.png in Resources */,
@@ -2512,6 +2573,7 @@
 				0A64DCDC17377D5D00B9A679 /* pn@2x.png in Resources */,
 				0A64DCDD17377D5D00B9A679 /* pr@2x.png in Resources */,
 				0A64DCDE17377D5D00B9A679 /* ps@2x.png in Resources */,
+				0AF358AA17E9F25E0090548C /* bannerAlert@2x.png in Resources */,
 				0A64DCDF17377D5D00B9A679 /* pt@2x.png in Resources */,
 				0A64DCE017377D5D00B9A679 /* pw@2x.png in Resources */,
 				0A64DCE117377D5D00B9A679 /* py@2x.png in Resources */,
@@ -2575,6 +2637,7 @@
 				0A64DD1B17377D5D00B9A679 /* ws@2x.png in Resources */,
 				0A64DD1C17377D5D00B9A679 /* ye@2x.png in Resources */,
 				0A64DD1D17377D5D00B9A679 /* yt@2x.png in Resources */,
+				0AF358AC17E9F25E0090548C /* bannerFailure@2x.png in Resources */,
 				0A64DD1E17377D5D00B9A679 /* za@2x.png in Resources */,
 				0A64DD1F17377D5D00B9A679 /* zm@2x.png in Resources */,
 				0A64DD2017377D5D00B9A679 /* zw@2x.png in Resources */,
@@ -2630,6 +2693,7 @@
 				0A64DD5217377D5D00B9A679 /* ve.png in Resources */,
 				0A64DD5317377D5D00B9A679 /* vg.png in Resources */,
 				0A64DD5417377D5D00B9A679 /* vi.png in Resources */,
+				0AF358A917E9F25E0090548C /* bannerAlert.png in Resources */,
 				0A64DD5517377D5D00B9A679 /* vn.png in Resources */,
 				0A64DD5617377D5D00B9A679 /* vu.png in Resources */,
 				0A64DD5717377D5D00B9A679 /* wf.png in Resources */,
@@ -2700,9 +2764,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A64D8B417375B5000B9A679 /* main.m in Sources */,
+				0AF358A817E9F25E0090548C /* ALAlertBannerManager.m in Sources */,
 				0A64D8B817375B5000B9A679 /* DKAppDelegate.m in Sources */,
 				0A64D8D717375B9400B9A679 /* DKSearchViewController.m in Sources */,
 				0A64D8DF1737689400B9A679 /* Toast+UIView.m in Sources */,
+				0AF358A717E9F25E0090548C /* ALAlertBanner.m in Sources */,
 				0A64D8E2173768BB00B9A679 /* DKDetailViewController.m in Sources */,
 				0A64D8E917376E9A00B9A679 /* DKFavoritesViewController.m in Sources */,
 				0A64DD6017377E3600B9A679 /* DKCountry.m in Sources */,

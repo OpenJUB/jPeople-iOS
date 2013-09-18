@@ -12,10 +12,27 @@
 
 @synthesize person;
 
+-(void) viewWillUnload {
+    for (ALAlertBanner* banner in [ALAlertBanner alertBannersInView:self.view]) {
+        [banner removeFromSuperview];
+    }
+    
+    [super viewWillUnload];
+}
+
 -(void) viewDidLoad {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     
     self.navigationItem.hidesBackButton = YES;
+    
+    /*//Swipe between tabs
+    UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(tappedRightButton:)];
+    [swipeLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
+    [self.view addGestureRecognizer:swipeLeft];
+    
+    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(tappedLeftButton:)];
+    [swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
+    [self.view addGestureRecognizer:swipeRight];*/
     
     // Left
     UIButton *a1 = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -153,6 +170,9 @@
     {
         [favorites addObject:person];
         self.navigationItem.rightBarButtonItem = [self barButtonForExisting:TRUE];
+        
+        ALAlertBanner *banner = [ALAlertBanner alertBannerForView:self.view style:ALAlertBannerStyleSuccess position:ALAlertBannerPositionTop title:@"Added to favorites!"];
+        [banner show];
     }
     else if (((UIButton*)sender).tag == 2)
     {
@@ -161,6 +181,9 @@
             if ([[personObject objectForKey:@"eid"] isEqual:[person objectForKey:@"eid"]])
                 [favorites removeObject:personObject];
         self.navigationItem.rightBarButtonItem = [self barButtonForExisting:FALSE];
+        
+        ALAlertBanner *banner = [ALAlertBanner alertBannerForView:self.view style:ALAlertBannerStyleSuccess position:ALAlertBannerPositionTop title:@"Removed from favorites!"];
+        [banner show];
     }
     
     [prefs setObject:favorites forKey:@"favorites"];
@@ -199,12 +222,15 @@
         
     } else {
         
-        [self.view makeToast:@"Your device doesn't support calling. Sorry :<" duration:2 position:@"bottom"];
+        ALAlertBanner *banner = [ALAlertBanner alertBannerForView:self.view style:ALAlertBannerStyleFailure position:ALAlertBannerPositionTop title:@"Ouch!" subtitle:@"Your device doesn't support making calls :<"];
+        [banner show];
     }
 }
 
 - (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
 {
+    ALAlertBanner *banner;
+    
     switch (result)
     {
         case MFMailComposeResultCancelled:
@@ -212,12 +238,18 @@
             break;
         case MFMailComposeResultSaved:
             NSLog(@"Mail saved: you saved the email message in the drafts folder.");
+            banner = [ALAlertBanner alertBannerForView:self.view style:ALAlertBannerStyleSuccess position:ALAlertBannerPositionTop title:@"Saved in drafts.." subtitle:nil];
+            [banner show];
             break;
         case MFMailComposeResultSent:
             NSLog(@"Mail send: the email message is queued in the outbox. It is ready to send.");
+            banner = [ALAlertBanner alertBannerForView:self.view style:ALAlertBannerStyleSuccess position:ALAlertBannerPositionTop title:@"Message sent! ;)" subtitle:nil];
+            [banner show];
             break;
         case MFMailComposeResultFailed:
             NSLog(@"Mail failed: the email message was not saved or queued, possibly due to an error.");
+            banner = [ALAlertBanner alertBannerForView:self.view style:ALAlertBannerStyleFailure position:ALAlertBannerPositionTop title:@"Ouch!" subtitle:@"Sending failed! Maybe Internet problems? :("];
+            [banner show];
             break;
         default:
             NSLog(@"Mail not sent.");
@@ -225,7 +257,61 @@
     }
     
     // Remove the mail view
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)tappedRightButton:(id)sender
+{
+    int selectedIndex = [self.tabBarController selectedIndex];
+    
+    if (selectedIndex + 1 >= [[self.tabBarController viewControllers] count]) {
+        return;
+    }
+    
+    /*
+     UIView * fromView = self.view;
+    UIView * toView = [[self.tabBarController.viewControllers objectAtIndex:selectedIndex+1] view];
+    
+    // Transition using a page curl.
+    [UIView transitionFromView:fromView
+                        toView:toView
+                      duration:0.5
+                       options:UIViewAnimationOptionTransitionFlipFromRight
+                    completion:^(BOOL finished) {
+                        if (finished) {
+                            self.tabBarController.selectedIndex = selectedIndex+1;
+                        }
+                    }];
+     */
+
+    self.tabBarController.selectedIndex = selectedIndex+1;
+}
+
+- (IBAction)tappedLeftButton:(id)sender
+{
+    int selectedIndex = [self.tabBarController selectedIndex];
+    
+    if (selectedIndex - 1 < 0) {
+        return;
+    }
+    
+    /*
+     UIView * fromView = self.view;
+    UIView * toView = [[self.tabBarController.viewControllers objectAtIndex:selectedIndex-1] view];
+    
+    // Transition using a page curl.
+    [UIView transitionFromView:fromView
+                        toView:toView
+                      duration:0.5
+                       options:UIViewAnimationOptionTransitionFlipFromLeft
+                    completion:^(BOOL finished) {
+                        if (finished) {
+                            self.tabBarController.selectedIndex = selectedIndex-1;
+                        }
+                    }];
+     */
+
+    self.tabBarController.selectedIndex = selectedIndex-1;
 }
 
 @end

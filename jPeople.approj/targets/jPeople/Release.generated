@@ -1,0 +1,2673 @@
+{
+    "xcode_project": "jPeople.xcodeproj", 
+    "sources": [
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "jPeople/DKAppDelegate.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "jPeople/DKCountry.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "jPeople/DKCreditsViewController.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "jPeople/DKDetailViewController.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "jPeople/DKFavoritesViewController.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "jPeople/DKSearchViewController.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "jPeople/Toast+UIView.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "jPeople/main.m", 
+            "flags": [], 
+            "defines": {}
+        }
+    ], 
+    "infoplists": [
+        "./jPeople/jPeople-Info.plist"
+    ], 
+    "libs": [], 
+    "defines": {
+        "__IPHONE_OS_VERSION_MIN_REQUIRED": 50000, 
+        "NS_BLOCK_ASSERTIONS": 1
+    }, 
+    "pchs": [
+        "./jPeople/jPeople-Prefix.pch"
+    ], 
+    "assets": [
+        {
+            "asset": "jPeople/en.lproj/InfoPlist.strings", 
+            "target": "en.lproj/InfoPlist.strings"
+        }, 
+        {
+            "asset": "Flags/_African-Union.png", 
+            "target": "_African-Union.png"
+        }, 
+        {
+            "asset": "Flags/_Alderney.png", 
+            "target": "_Alderney.png"
+        }, 
+        {
+            "asset": "Flags/_Arab League.png", 
+            "target": "_Arab League.png"
+        }, 
+        {
+            "asset": "Flags/_ASEAN.png", 
+            "target": "_ASEAN.png"
+        }, 
+        {
+            "asset": "Flags/_Basque Country.png", 
+            "target": "_Basque Country.png"
+        }, 
+        {
+            "asset": "Flags/_CARICOM.png", 
+            "target": "_CARICOM.png"
+        }, 
+        {
+            "asset": "Flags/_Catalonia.png", 
+            "target": "_Catalonia.png"
+        }, 
+        {
+            "asset": "Flags/_CIS.png", 
+            "target": "_CIS.png"
+        }, 
+        {
+            "asset": "Flags/_Commonwealth.png", 
+            "target": "_Commonwealth.png"
+        }, 
+        {
+            "asset": "Flags/_England.png", 
+            "target": "_England.png"
+        }, 
+        {
+            "asset": "Flags/_European Union.png", 
+            "target": "_European Union.png"
+        }, 
+        {
+            "asset": "Flags/_FAO.png", 
+            "target": "_FAO.png"
+        }, 
+        {
+            "asset": "Flags/_Galicia.png", 
+            "target": "_Galicia.png"
+        }, 
+        {
+            "asset": "Flags/_IAEA.png", 
+            "target": "_IAEA.png"
+        }, 
+        {
+            "asset": "Flags/_IHO.png", 
+            "target": "_IHO.png"
+        }, 
+        {
+            "asset": "Flags/_Islamic Conference.png", 
+            "target": "_Islamic Conference.png"
+        }, 
+        {
+            "asset": "Flags/_Kosovo.png", 
+            "target": "_Kosovo.png"
+        }, 
+        {
+            "asset": "Flags/_NATO.png", 
+            "target": "_NATO.png"
+        }, 
+        {
+            "asset": "Flags/_Northern Cyprus.png", 
+            "target": "_Northern Cyprus.png"
+        }, 
+        {
+            "asset": "Flags/_Northern Ireland.png", 
+            "target": "_Northern Ireland.png"
+        }, 
+        {
+            "asset": "Flags/_OAS.png", 
+            "target": "_OAS.png"
+        }, 
+        {
+            "asset": "Flags/_OECD.png", 
+            "target": "_OECD.png"
+        }, 
+        {
+            "asset": "Flags/_Olimpic Movement.png", 
+            "target": "_Olimpic Movement.png"
+        }, 
+        {
+            "asset": "Flags/_OPEC.png", 
+            "target": "_OPEC.png"
+        }, 
+        {
+            "asset": "Flags/_Quebec.png", 
+            "target": "_Quebec.png"
+        }, 
+        {
+            "asset": "Flags/_Red Cross.png", 
+            "target": "_Red Cross.png"
+        }, 
+        {
+            "asset": "Flags/_Scotland.png", 
+            "target": "_Scotland.png"
+        }, 
+        {
+            "asset": "Flags/_Somaliland.png", 
+            "target": "_Somaliland.png"
+        }, 
+        {
+            "asset": "Flags/_Tristan da Cunha.png", 
+            "target": "_Tristan da Cunha.png"
+        }, 
+        {
+            "asset": "Flags/_UNESCO.png", 
+            "target": "_UNESCO.png"
+        }, 
+        {
+            "asset": "Flags/_UNICEF.png", 
+            "target": "_UNICEF.png"
+        }, 
+        {
+            "asset": "Flags/_United-Nations.png", 
+            "target": "_United-Nations.png"
+        }, 
+        {
+            "asset": "Flags/_Wales.png", 
+            "target": "_Wales.png"
+        }, 
+        {
+            "asset": "Flags/_WHO.png", 
+            "target": "_WHO.png"
+        }, 
+        {
+            "asset": "Flags/_WTO.png", 
+            "target": "_WTO.png"
+        }, 
+        {
+            "asset": "Flags/ad.png", 
+            "target": "ad.png"
+        }, 
+        {
+            "asset": "Flags/ae.png", 
+            "target": "ae.png"
+        }, 
+        {
+            "asset": "Flags/af.png", 
+            "target": "af.png"
+        }, 
+        {
+            "asset": "Flags/ag.png", 
+            "target": "ag.png"
+        }, 
+        {
+            "asset": "Flags/ai.png", 
+            "target": "ai.png"
+        }, 
+        {
+            "asset": "Flags/al.png", 
+            "target": "al.png"
+        }, 
+        {
+            "asset": "Flags/am.png", 
+            "target": "am.png"
+        }, 
+        {
+            "asset": "Flags/an.png", 
+            "target": "an.png"
+        }, 
+        {
+            "asset": "Flags/ao.png", 
+            "target": "ao.png"
+        }, 
+        {
+            "asset": "Flags/aq.png", 
+            "target": "aq.png"
+        }, 
+        {
+            "asset": "Flags/ar.png", 
+            "target": "ar.png"
+        }, 
+        {
+            "asset": "Flags/as.png", 
+            "target": "as.png"
+        }, 
+        {
+            "asset": "Flags/at.png", 
+            "target": "at.png"
+        }, 
+        {
+            "asset": "Flags/au.png", 
+            "target": "au.png"
+        }, 
+        {
+            "asset": "Flags/aw.png", 
+            "target": "aw.png"
+        }, 
+        {
+            "asset": "Flags/ax.png", 
+            "target": "ax.png"
+        }, 
+        {
+            "asset": "Flags/az.png", 
+            "target": "az.png"
+        }, 
+        {
+            "asset": "Flags/ba.png", 
+            "target": "ba.png"
+        }, 
+        {
+            "asset": "Flags/bb.png", 
+            "target": "bb.png"
+        }, 
+        {
+            "asset": "Flags/bd.png", 
+            "target": "bd.png"
+        }, 
+        {
+            "asset": "Flags/be.png", 
+            "target": "be.png"
+        }, 
+        {
+            "asset": "Flags/bf.png", 
+            "target": "bf.png"
+        }, 
+        {
+            "asset": "Flags/bg.png", 
+            "target": "bg.png"
+        }, 
+        {
+            "asset": "Flags/bh.png", 
+            "target": "bh.png"
+        }, 
+        {
+            "asset": "Flags/bi.png", 
+            "target": "bi.png"
+        }, 
+        {
+            "asset": "Flags/bj.png", 
+            "target": "bj.png"
+        }, 
+        {
+            "asset": "Flags/bl.png", 
+            "target": "bl.png"
+        }, 
+        {
+            "asset": "Flags/bm.png", 
+            "target": "bm.png"
+        }, 
+        {
+            "asset": "Flags/bn.png", 
+            "target": "bn.png"
+        }, 
+        {
+            "asset": "Flags/bo.png", 
+            "target": "bo.png"
+        }, 
+        {
+            "asset": "Flags/br.png", 
+            "target": "br.png"
+        }, 
+        {
+            "asset": "Flags/bs.png", 
+            "target": "bs.png"
+        }, 
+        {
+            "asset": "Flags/bt.png", 
+            "target": "bt.png"
+        }, 
+        {
+            "asset": "Flags/bv.png", 
+            "target": "bv.png"
+        }, 
+        {
+            "asset": "Flags/bw.png", 
+            "target": "bw.png"
+        }, 
+        {
+            "asset": "Flags/by.png", 
+            "target": "by.png"
+        }, 
+        {
+            "asset": "Flags/bz.png", 
+            "target": "bz.png"
+        }, 
+        {
+            "asset": "Flags/ca.png", 
+            "target": "ca.png"
+        }, 
+        {
+            "asset": "Flags/cc.png", 
+            "target": "cc.png"
+        }, 
+        {
+            "asset": "Flags/cd.png", 
+            "target": "cd.png"
+        }, 
+        {
+            "asset": "Flags/cf.png", 
+            "target": "cf.png"
+        }, 
+        {
+            "asset": "Flags/cg.png", 
+            "target": "cg.png"
+        }, 
+        {
+            "asset": "Flags/ch.png", 
+            "target": "ch.png"
+        }, 
+        {
+            "asset": "Flags/ci.png", 
+            "target": "ci.png"
+        }, 
+        {
+            "asset": "Flags/ck.png", 
+            "target": "ck.png"
+        }, 
+        {
+            "asset": "Flags/cl.png", 
+            "target": "cl.png"
+        }, 
+        {
+            "asset": "Flags/cm.png", 
+            "target": "cm.png"
+        }, 
+        {
+            "asset": "Flags/cn.png", 
+            "target": "cn.png"
+        }, 
+        {
+            "asset": "Flags/co.png", 
+            "target": "co.png"
+        }, 
+        {
+            "asset": "Flags/Countries.plist", 
+            "target": "Countries.plist"
+        }, 
+        {
+            "asset": "Flags/cr.png", 
+            "target": "cr.png"
+        }, 
+        {
+            "asset": "Flags/cu.png", 
+            "target": "cu.png"
+        }, 
+        {
+            "asset": "Flags/cv.png", 
+            "target": "cv.png"
+        }, 
+        {
+            "asset": "Flags/cw.png", 
+            "target": "cw.png"
+        }, 
+        {
+            "asset": "Flags/cx.png", 
+            "target": "cx.png"
+        }, 
+        {
+            "asset": "Flags/cy.png", 
+            "target": "cy.png"
+        }, 
+        {
+            "asset": "Flags/cz.png", 
+            "target": "cz.png"
+        }, 
+        {
+            "asset": "Flags/de.png", 
+            "target": "de.png"
+        }, 
+        {
+            "asset": "Flags/dj.png", 
+            "target": "dj.png"
+        }, 
+        {
+            "asset": "Flags/dk.png", 
+            "target": "dk.png"
+        }, 
+        {
+            "asset": "Flags/dm.png", 
+            "target": "dm.png"
+        }, 
+        {
+            "asset": "Flags/do.png", 
+            "target": "do.png"
+        }, 
+        {
+            "asset": "Flags/dz.png", 
+            "target": "dz.png"
+        }, 
+        {
+            "asset": "Flags/ec.png", 
+            "target": "ec.png"
+        }, 
+        {
+            "asset": "Flags/ee.png", 
+            "target": "ee.png"
+        }, 
+        {
+            "asset": "Flags/eg.png", 
+            "target": "eg.png"
+        }, 
+        {
+            "asset": "Flags/eh.png", 
+            "target": "eh.png"
+        }, 
+        {
+            "asset": "Flags/er.png", 
+            "target": "er.png"
+        }, 
+        {
+            "asset": "Flags/es.png", 
+            "target": "es.png"
+        }, 
+        {
+            "asset": "Flags/et.png", 
+            "target": "et.png"
+        }, 
+        {
+            "asset": "Flags/fi.png", 
+            "target": "fi.png"
+        }, 
+        {
+            "asset": "Flags/fj.png", 
+            "target": "fj.png"
+        }, 
+        {
+            "asset": "Flags/fk.png", 
+            "target": "fk.png"
+        }, 
+        {
+            "asset": "Flags/fm.png", 
+            "target": "fm.png"
+        }, 
+        {
+            "asset": "Flags/fo.png", 
+            "target": "fo.png"
+        }, 
+        {
+            "asset": "Flags/fr.png", 
+            "target": "fr.png"
+        }, 
+        {
+            "asset": "Flags/ga.png", 
+            "target": "ga.png"
+        }, 
+        {
+            "asset": "Flags/gb.png", 
+            "target": "gb.png"
+        }, 
+        {
+            "asset": "Flags/gd.png", 
+            "target": "gd.png"
+        }, 
+        {
+            "asset": "Flags/ge.png", 
+            "target": "ge.png"
+        }, 
+        {
+            "asset": "Flags/gf.png", 
+            "target": "gf.png"
+        }, 
+        {
+            "asset": "Flags/gg.png", 
+            "target": "gg.png"
+        }, 
+        {
+            "asset": "Flags/gh.png", 
+            "target": "gh.png"
+        }, 
+        {
+            "asset": "Flags/gi.png", 
+            "target": "gi.png"
+        }, 
+        {
+            "asset": "Flags/gl.png", 
+            "target": "gl.png"
+        }, 
+        {
+            "asset": "Flags/gm.png", 
+            "target": "gm.png"
+        }, 
+        {
+            "asset": "Flags/gn.png", 
+            "target": "gn.png"
+        }, 
+        {
+            "asset": "Flags/gp.png", 
+            "target": "gp.png"
+        }, 
+        {
+            "asset": "Flags/gq.png", 
+            "target": "gq.png"
+        }, 
+        {
+            "asset": "Flags/gr.png", 
+            "target": "gr.png"
+        }, 
+        {
+            "asset": "Flags/gs.png", 
+            "target": "gs.png"
+        }, 
+        {
+            "asset": "Flags/gt.png", 
+            "target": "gt.png"
+        }, 
+        {
+            "asset": "Flags/gu.png", 
+            "target": "gu.png"
+        }, 
+        {
+            "asset": "Flags/gw.png", 
+            "target": "gw.png"
+        }, 
+        {
+            "asset": "Flags/gy.png", 
+            "target": "gy.png"
+        }, 
+        {
+            "asset": "Flags/hk.png", 
+            "target": "hk.png"
+        }, 
+        {
+            "asset": "Flags/hm.png", 
+            "target": "hm.png"
+        }, 
+        {
+            "asset": "Flags/hn.png", 
+            "target": "hn.png"
+        }, 
+        {
+            "asset": "Flags/hr.png", 
+            "target": "hr.png"
+        }, 
+        {
+            "asset": "Flags/ht.png", 
+            "target": "ht.png"
+        }, 
+        {
+            "asset": "Flags/hu.png", 
+            "target": "hu.png"
+        }, 
+        {
+            "asset": "Flags/id.png", 
+            "target": "id.png"
+        }, 
+        {
+            "asset": "Flags/ie.png", 
+            "target": "ie.png"
+        }, 
+        {
+            "asset": "Flags/il.png", 
+            "target": "il.png"
+        }, 
+        {
+            "asset": "Flags/im.png", 
+            "target": "im.png"
+        }, 
+        {
+            "asset": "Flags/in.png", 
+            "target": "in.png"
+        }, 
+        {
+            "asset": "Flags/io.png", 
+            "target": "io.png"
+        }, 
+        {
+            "asset": "Flags/iq.png", 
+            "target": "iq.png"
+        }, 
+        {
+            "asset": "Flags/ir.png", 
+            "target": "ir.png"
+        }, 
+        {
+            "asset": "Flags/is.png", 
+            "target": "is.png"
+        }, 
+        {
+            "asset": "Flags/it.png", 
+            "target": "it.png"
+        }, 
+        {
+            "asset": "Flags/je.png", 
+            "target": "je.png"
+        }, 
+        {
+            "asset": "Flags/jm.png", 
+            "target": "jm.png"
+        }, 
+        {
+            "asset": "Flags/jo.png", 
+            "target": "jo.png"
+        }, 
+        {
+            "asset": "Flags/jp.png", 
+            "target": "jp.png"
+        }, 
+        {
+            "asset": "Flags/ke.png", 
+            "target": "ke.png"
+        }, 
+        {
+            "asset": "Flags/kg.png", 
+            "target": "kg.png"
+        }, 
+        {
+            "asset": "Flags/kh.png", 
+            "target": "kh.png"
+        }, 
+        {
+            "asset": "Flags/ki.png", 
+            "target": "ki.png"
+        }, 
+        {
+            "asset": "Flags/km.png", 
+            "target": "km.png"
+        }, 
+        {
+            "asset": "Flags/kn.png", 
+            "target": "kn.png"
+        }, 
+        {
+            "asset": "Flags/kp.png", 
+            "target": "kp.png"
+        }, 
+        {
+            "asset": "Flags/kr.png", 
+            "target": "kr.png"
+        }, 
+        {
+            "asset": "Flags/kw.png", 
+            "target": "kw.png"
+        }, 
+        {
+            "asset": "Flags/ky.png", 
+            "target": "ky.png"
+        }, 
+        {
+            "asset": "Flags/kz.png", 
+            "target": "kz.png"
+        }, 
+        {
+            "asset": "Flags/la.png", 
+            "target": "la.png"
+        }, 
+        {
+            "asset": "Flags/lb.png", 
+            "target": "lb.png"
+        }, 
+        {
+            "asset": "Flags/lc.png", 
+            "target": "lc.png"
+        }, 
+        {
+            "asset": "Flags/li.png", 
+            "target": "li.png"
+        }, 
+        {
+            "asset": "Flags/lk.png", 
+            "target": "lk.png"
+        }, 
+        {
+            "asset": "Flags/lr.png", 
+            "target": "lr.png"
+        }, 
+        {
+            "asset": "Flags/ls.png", 
+            "target": "ls.png"
+        }, 
+        {
+            "asset": "Flags/lt.png", 
+            "target": "lt.png"
+        }, 
+        {
+            "asset": "Flags/lu.png", 
+            "target": "lu.png"
+        }, 
+        {
+            "asset": "Flags/lv.png", 
+            "target": "lv.png"
+        }, 
+        {
+            "asset": "Flags/ly.png", 
+            "target": "ly.png"
+        }, 
+        {
+            "asset": "Flags/ma.png", 
+            "target": "ma.png"
+        }, 
+        {
+            "asset": "Flags/mc.png", 
+            "target": "mc.png"
+        }, 
+        {
+            "asset": "Flags/md.png", 
+            "target": "md.png"
+        }, 
+        {
+            "asset": "Flags/me.png", 
+            "target": "me.png"
+        }, 
+        {
+            "asset": "Flags/mf.png", 
+            "target": "mf.png"
+        }, 
+        {
+            "asset": "Flags/mg.png", 
+            "target": "mg.png"
+        }, 
+        {
+            "asset": "Flags/mh.png", 
+            "target": "mh.png"
+        }, 
+        {
+            "asset": "Flags/mk.png", 
+            "target": "mk.png"
+        }, 
+        {
+            "asset": "Flags/mm.png", 
+            "target": "mm.png"
+        }, 
+        {
+            "asset": "Flags/ml.png", 
+            "target": "ml.png"
+        }, 
+        {
+            "asset": "Flags/mn.png", 
+            "target": "mn.png"
+        }, 
+        {
+            "asset": "Flags/mo.png", 
+            "target": "mo.png"
+        }, 
+        {
+            "asset": "Flags/mp.png", 
+            "target": "mp.png"
+        }, 
+        {
+            "asset": "Flags/mq.png", 
+            "target": "mq.png"
+        }, 
+        {
+            "asset": "Flags/mr.png", 
+            "target": "mr.png"
+        }, 
+        {
+            "asset": "Flags/ms.png", 
+            "target": "ms.png"
+        }, 
+        {
+            "asset": "Flags/mt.png", 
+            "target": "mt.png"
+        }, 
+        {
+            "asset": "Flags/mu.png", 
+            "target": "mu.png"
+        }, 
+        {
+            "asset": "Flags/mv.png", 
+            "target": "mv.png"
+        }, 
+        {
+            "asset": "Flags/mw.png", 
+            "target": "mw.png"
+        }, 
+        {
+            "asset": "Flags/mx.png", 
+            "target": "mx.png"
+        }, 
+        {
+            "asset": "Flags/my.png", 
+            "target": "my.png"
+        }, 
+        {
+            "asset": "Flags/mz.png", 
+            "target": "mz.png"
+        }, 
+        {
+            "asset": "Flags/na.png", 
+            "target": "na.png"
+        }, 
+        {
+            "asset": "Flags/nc.png", 
+            "target": "nc.png"
+        }, 
+        {
+            "asset": "Flags/ne.png", 
+            "target": "ne.png"
+        }, 
+        {
+            "asset": "Flags/nf.png", 
+            "target": "nf.png"
+        }, 
+        {
+            "asset": "Flags/ng.png", 
+            "target": "ng.png"
+        }, 
+        {
+            "asset": "Flags/ni.png", 
+            "target": "ni.png"
+        }, 
+        {
+            "asset": "Flags/nl.png", 
+            "target": "nl.png"
+        }, 
+        {
+            "asset": "Flags/no.png", 
+            "target": "no.png"
+        }, 
+        {
+            "asset": "Flags/np.png", 
+            "target": "np.png"
+        }, 
+        {
+            "asset": "Flags/nr.png", 
+            "target": "nr.png"
+        }, 
+        {
+            "asset": "Flags/nu.png", 
+            "target": "nu.png"
+        }, 
+        {
+            "asset": "Flags/nz.png", 
+            "target": "nz.png"
+        }, 
+        {
+            "asset": "Flags/om.png", 
+            "target": "om.png"
+        }, 
+        {
+            "asset": "Flags/pa.png", 
+            "target": "pa.png"
+        }, 
+        {
+            "asset": "Flags/pe.png", 
+            "target": "pe.png"
+        }, 
+        {
+            "asset": "Flags/pf.png", 
+            "target": "pf.png"
+        }, 
+        {
+            "asset": "Flags/pg.png", 
+            "target": "pg.png"
+        }, 
+        {
+            "asset": "Flags/ph.png", 
+            "target": "ph.png"
+        }, 
+        {
+            "asset": "Flags/pk.png", 
+            "target": "pk.png"
+        }, 
+        {
+            "asset": "Flags/pl.png", 
+            "target": "pl.png"
+        }, 
+        {
+            "asset": "Flags/pm.png", 
+            "target": "pm.png"
+        }, 
+        {
+            "asset": "Flags/pn.png", 
+            "target": "pn.png"
+        }, 
+        {
+            "asset": "Flags/pr.png", 
+            "target": "pr.png"
+        }, 
+        {
+            "asset": "Flags/ps.png", 
+            "target": "ps.png"
+        }, 
+        {
+            "asset": "Flags/pt.png", 
+            "target": "pt.png"
+        }, 
+        {
+            "asset": "Flags/pw.png", 
+            "target": "pw.png"
+        }, 
+        {
+            "asset": "Flags/py.png", 
+            "target": "py.png"
+        }, 
+        {
+            "asset": "Flags/qa.png", 
+            "target": "qa.png"
+        }, 
+        {
+            "asset": "Flags/re.png", 
+            "target": "re.png"
+        }, 
+        {
+            "asset": "Flags/Retina/_African-Union@2x.png", 
+            "target": "_African-Union@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/_Alderney@2x.png", 
+            "target": "_Alderney@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/_Arab-League@2x.png", 
+            "target": "_Arab-League@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/_ASEAN@2x.png", 
+            "target": "_ASEAN@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/_Basque-Country@2x.png", 
+            "target": "_Basque-Country@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/_CARICOM@2x.png", 
+            "target": "_CARICOM@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/_Catalonia@2x.png", 
+            "target": "_Catalonia@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/_CIS@2x.png", 
+            "target": "_CIS@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/_Commonwealth@2x.png", 
+            "target": "_Commonwealth@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/_England@2x.png", 
+            "target": "_England@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/_European-Union@2x.png", 
+            "target": "_European-Union@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/_FAO@2x.png", 
+            "target": "_FAO@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/_Galicia@2x.png", 
+            "target": "_Galicia@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/_IAEA@2x.png", 
+            "target": "_IAEA@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/_IHO@2x.png", 
+            "target": "_IHO@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/_Islamic-Conference@2x.png", 
+            "target": "_Islamic-Conference@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/_Kosovo@2x.png", 
+            "target": "_Kosovo@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/_NATO@2x.png", 
+            "target": "_NATO@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/_Northern-Cyprus@2x.png", 
+            "target": "_Northern-Cyprus@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/_Northern-Ireland@2x.png", 
+            "target": "_Northern-Ireland@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/_OAS@2x.png", 
+            "target": "_OAS@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/_OECD@2x.png", 
+            "target": "_OECD@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/_Olimpic-Movement@2x.png", 
+            "target": "_Olimpic-Movement@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/_OPEC@2x.png", 
+            "target": "_OPEC@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/_Quebec@2x.png", 
+            "target": "_Quebec@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/_Red-Cross@2x.png", 
+            "target": "_Red-Cross@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/_Scotland@2x.png", 
+            "target": "_Scotland@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/_Somaliland@2x.png", 
+            "target": "_Somaliland@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/_Tristan-da-Cunha@2x.png", 
+            "target": "_Tristan-da-Cunha@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/_UNESCO@2x.png", 
+            "target": "_UNESCO@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/_UNICEF@2x.png", 
+            "target": "_UNICEF@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/_United-Nations@2x.png", 
+            "target": "_United-Nations@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/_Wales@2x.png", 
+            "target": "_Wales@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/_WHO@2x.png", 
+            "target": "_WHO@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/_WTO@2x.png", 
+            "target": "_WTO@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/ad@2x.png", 
+            "target": "ad@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/ae@2x.png", 
+            "target": "ae@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/af@2x.png", 
+            "target": "af@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/ag@2x.png", 
+            "target": "ag@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/ai@2x.png", 
+            "target": "ai@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/al@2x.png", 
+            "target": "al@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/am@2x.png", 
+            "target": "am@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/an@2x.png", 
+            "target": "an@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/ao@2x.png", 
+            "target": "ao@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/aq@2x.png", 
+            "target": "aq@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/ar@2x.png", 
+            "target": "ar@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/as@2x.png", 
+            "target": "as@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/at@2x.png", 
+            "target": "at@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/au@2x.png", 
+            "target": "au@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/aw@2x.png", 
+            "target": "aw@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/ax@2x.png", 
+            "target": "ax@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/az@2x.png", 
+            "target": "az@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/ba@2x.png", 
+            "target": "ba@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/bb@2x.png", 
+            "target": "bb@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/bd@2x.png", 
+            "target": "bd@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/be@2x.png", 
+            "target": "be@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/bf@2x.png", 
+            "target": "bf@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/bg@2x.png", 
+            "target": "bg@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/bh@2x.png", 
+            "target": "bh@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/bi@2x.png", 
+            "target": "bi@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/bj@2x.png", 
+            "target": "bj@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/bl@2x.png", 
+            "target": "bl@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/bm@2x.png", 
+            "target": "bm@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/bn@2x.png", 
+            "target": "bn@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/bo@2x.png", 
+            "target": "bo@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/br@2x.png", 
+            "target": "br@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/bs@2x.png", 
+            "target": "bs@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/bt@2x.png", 
+            "target": "bt@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/bv@2x.png", 
+            "target": "bv@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/bw@2x.png", 
+            "target": "bw@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/by@2x.png", 
+            "target": "by@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/bz@2x.png", 
+            "target": "bz@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/ca@2x.png", 
+            "target": "ca@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/cc@2x.png", 
+            "target": "cc@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/cd@2x.png", 
+            "target": "cd@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/cf@2x.png", 
+            "target": "cf@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/cg@2x.png", 
+            "target": "cg@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/ch@2x.png", 
+            "target": "ch@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/ci@2x.png", 
+            "target": "ci@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/ck@2x.png", 
+            "target": "ck@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/cl@2x.png", 
+            "target": "cl@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/cm@2x.png", 
+            "target": "cm@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/cn@2x.png", 
+            "target": "cn@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/co@2x.png", 
+            "target": "co@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/cr@2x.png", 
+            "target": "cr@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/cu@2x.png", 
+            "target": "cu@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/cv@2x.png", 
+            "target": "cv@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/cw@2x.png", 
+            "target": "cw@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/cx@2x.png", 
+            "target": "cx@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/cy@2x.png", 
+            "target": "cy@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/cz@2x.png", 
+            "target": "cz@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/de@2x.png", 
+            "target": "de@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/dj@2x.png", 
+            "target": "dj@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/dk@2x.png", 
+            "target": "dk@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/dm@2x.png", 
+            "target": "dm@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/do@2x.png", 
+            "target": "do@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/dz@2x.png", 
+            "target": "dz@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/ec@2x.png", 
+            "target": "ec@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/ee@2x.png", 
+            "target": "ee@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/eg@2x.png", 
+            "target": "eg@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/eh@2x.png", 
+            "target": "eh@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/er@2x.png", 
+            "target": "er@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/es@2x.png", 
+            "target": "es@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/et@2x.png", 
+            "target": "et@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/fi@2x.png", 
+            "target": "fi@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/fj@2x.png", 
+            "target": "fj@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/fk@2x.png", 
+            "target": "fk@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/fm@2x.png", 
+            "target": "fm@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/fo@2x.png", 
+            "target": "fo@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/ga@2x.png", 
+            "target": "ga@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/fr@2x.png", 
+            "target": "fr@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/gb@2x.png", 
+            "target": "gb@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/gd@2x.png", 
+            "target": "gd@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/ge@2x.png", 
+            "target": "ge@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/gf@2x.png", 
+            "target": "gf@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/gg@2x.png", 
+            "target": "gg@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/gh@2x.png", 
+            "target": "gh@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/gi@2x.png", 
+            "target": "gi@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/gl@2x.png", 
+            "target": "gl@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/gm@2x.png", 
+            "target": "gm@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/gn@2x.png", 
+            "target": "gn@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/gp@2x.png", 
+            "target": "gp@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/gq@2x.png", 
+            "target": "gq@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/gr@2x.png", 
+            "target": "gr@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/gs@2x.png", 
+            "target": "gs@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/gt@2x.png", 
+            "target": "gt@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/gu@2x.png", 
+            "target": "gu@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/gw@2x.png", 
+            "target": "gw@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/gy@2x.png", 
+            "target": "gy@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/hk@2x.png", 
+            "target": "hk@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/hm@2x.png", 
+            "target": "hm@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/hn@2x.png", 
+            "target": "hn@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/hr@2x.png", 
+            "target": "hr@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/ht@2x.png", 
+            "target": "ht@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/hu@2x.png", 
+            "target": "hu@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/id@2x.png", 
+            "target": "id@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/ie@2x.png", 
+            "target": "ie@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/il@2x.png", 
+            "target": "il@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/im@2x.png", 
+            "target": "im@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/in@2x.png", 
+            "target": "in@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/io@2x.png", 
+            "target": "io@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/iq@2x.png", 
+            "target": "iq@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/ir@2x.png", 
+            "target": "ir@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/is@2x.png", 
+            "target": "is@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/it@2x.png", 
+            "target": "it@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/je@2x.png", 
+            "target": "je@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/jm@2x.png", 
+            "target": "jm@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/jo@2x.png", 
+            "target": "jo@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/jp@2x.png", 
+            "target": "jp@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/ke@2x.png", 
+            "target": "ke@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/kg@2x.png", 
+            "target": "kg@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/kh@2x.png", 
+            "target": "kh@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/ki@2x.png", 
+            "target": "ki@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/km@2x.png", 
+            "target": "km@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/kn@2x.png", 
+            "target": "kn@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/kp@2x.png", 
+            "target": "kp@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/kr@2x.png", 
+            "target": "kr@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/kw@2x.png", 
+            "target": "kw@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/ky@2x.png", 
+            "target": "ky@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/kz@2x.png", 
+            "target": "kz@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/la@2x.png", 
+            "target": "la@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/lb@2x.png", 
+            "target": "lb@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/lc@2x.png", 
+            "target": "lc@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/li@2x.png", 
+            "target": "li@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/lk@2x.png", 
+            "target": "lk@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/lr@2x.png", 
+            "target": "lr@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/ls@2x.png", 
+            "target": "ls@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/lt@2x.png", 
+            "target": "lt@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/lu@2x.png", 
+            "target": "lu@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/lv@2x.png", 
+            "target": "lv@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/ly@2x.png", 
+            "target": "ly@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/ma@2x.png", 
+            "target": "ma@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/mc@2x.png", 
+            "target": "mc@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/md@2x.png", 
+            "target": "md@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/me@2x.png", 
+            "target": "me@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/mf@2x.png", 
+            "target": "mf@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/mg@2x.png", 
+            "target": "mg@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/mh@2x.png", 
+            "target": "mh@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/mk@2x.png", 
+            "target": "mk@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/ml@2x.png", 
+            "target": "ml@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/mm@2x.png", 
+            "target": "mm@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/mn@2x.png", 
+            "target": "mn@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/mo@2x.png", 
+            "target": "mo@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/mp@2x.png", 
+            "target": "mp@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/mq@2x.png", 
+            "target": "mq@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/mr@2x.png", 
+            "target": "mr@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/ms@2x.png", 
+            "target": "ms@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/mt@2x.png", 
+            "target": "mt@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/mu@2x.png", 
+            "target": "mu@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/mv@2x.png", 
+            "target": "mv@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/mw@2x.png", 
+            "target": "mw@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/mx@2x.png", 
+            "target": "mx@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/my@2x.png", 
+            "target": "my@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/mz@2x.png", 
+            "target": "mz@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/na@2x.png", 
+            "target": "na@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/nc@2x.png", 
+            "target": "nc@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/ne@2x.png", 
+            "target": "ne@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/nf@2x.png", 
+            "target": "nf@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/ng@2x.png", 
+            "target": "ng@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/ni@2x.png", 
+            "target": "ni@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/nl@2x.png", 
+            "target": "nl@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/no@2x.png", 
+            "target": "no@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/np@2x.png", 
+            "target": "np@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/nr@2x.png", 
+            "target": "nr@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/nu@2x.png", 
+            "target": "nu@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/nz@2x.png", 
+            "target": "nz@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/om@2x.png", 
+            "target": "om@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/pa@2x.png", 
+            "target": "pa@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/pe@2x.png", 
+            "target": "pe@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/pf@2x.png", 
+            "target": "pf@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/pg@2x.png", 
+            "target": "pg@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/ph@2x.png", 
+            "target": "ph@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/pk@2x.png", 
+            "target": "pk@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/pl@2x.png", 
+            "target": "pl@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/pm@2x.png", 
+            "target": "pm@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/pn@2x.png", 
+            "target": "pn@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/pr@2x.png", 
+            "target": "pr@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/ps@2x.png", 
+            "target": "ps@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/pt@2x.png", 
+            "target": "pt@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/pw@2x.png", 
+            "target": "pw@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/py@2x.png", 
+            "target": "py@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/qa@2x.png", 
+            "target": "qa@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/re@2x.png", 
+            "target": "re@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/rn@2x.png", 
+            "target": "rn@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/ro@2x.png", 
+            "target": "ro@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/rs@2x.png", 
+            "target": "rs@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/ru@2x.png", 
+            "target": "ru@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/rw@2x.png", 
+            "target": "rw@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/sa@2x.png", 
+            "target": "sa@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/sb@2x.png", 
+            "target": "sb@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/sc@2x.png", 
+            "target": "sc@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/sd@2x.png", 
+            "target": "sd@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/se@2x.png", 
+            "target": "se@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/sg@2x.png", 
+            "target": "sg@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/sh@2x.png", 
+            "target": "sh@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/si@2x.png", 
+            "target": "si@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/sj@2x.png", 
+            "target": "sj@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/sk@2x.png", 
+            "target": "sk@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/sl@2x.png", 
+            "target": "sl@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/sm@2x.png", 
+            "target": "sm@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/sn@2x.png", 
+            "target": "sn@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/so@2x.png", 
+            "target": "so@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/sr@2x.png", 
+            "target": "sr@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/ss@2x.png", 
+            "target": "ss@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/st@2x.png", 
+            "target": "st@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/sv@2x.png", 
+            "target": "sv@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/sx@2x.png", 
+            "target": "sx@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/sy@2x.png", 
+            "target": "sy@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/sz@2x.png", 
+            "target": "sz@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/tc@2x.png", 
+            "target": "tc@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/td@2x.png", 
+            "target": "td@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/tf@2x.png", 
+            "target": "tf@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/tg@2x.png", 
+            "target": "tg@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/th@2x.png", 
+            "target": "th@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/tj@2x.png", 
+            "target": "tj@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/tk@2x.png", 
+            "target": "tk@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/tl@2x.png", 
+            "target": "tl@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/tm@2x.png", 
+            "target": "tm@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/to@2x.png", 
+            "target": "to@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/tr@2x.png", 
+            "target": "tr@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/tt@2x.png", 
+            "target": "tt@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/tv@2x.png", 
+            "target": "tv@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/tw@2x.png", 
+            "target": "tw@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/tz@2x.png", 
+            "target": "tz@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/ua@2x.png", 
+            "target": "ua@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/ug@2x.png", 
+            "target": "ug@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/um@2x.png", 
+            "target": "um@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/us@2x.png", 
+            "target": "us@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/uy@2x.png", 
+            "target": "uy@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/uz@2x.png", 
+            "target": "uz@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/va@2x.png", 
+            "target": "va@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/vc@2x.png", 
+            "target": "vc@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/ve@2x.png", 
+            "target": "ve@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/vg@2x.png", 
+            "target": "vg@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/vi@2x.png", 
+            "target": "vi@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/vn@2x.png", 
+            "target": "vn@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/vu@2x.png", 
+            "target": "vu@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/wf@2x.png", 
+            "target": "wf@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/ws@2x.png", 
+            "target": "ws@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/ye@2x.png", 
+            "target": "ye@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/yt@2x.png", 
+            "target": "yt@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/za@2x.png", 
+            "target": "za@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/zm@2x.png", 
+            "target": "zm@2x.png"
+        }, 
+        {
+            "asset": "Flags/Retina/zw@2x.png", 
+            "target": "zw@2x.png"
+        }, 
+        {
+            "asset": "Flags/ro.png", 
+            "target": "ro.png"
+        }, 
+        {
+            "asset": "Flags/rs.png", 
+            "target": "rs.png"
+        }, 
+        {
+            "asset": "Flags/ru.png", 
+            "target": "ru.png"
+        }, 
+        {
+            "asset": "Flags/rw.png", 
+            "target": "rw.png"
+        }, 
+        {
+            "asset": "Flags/sa.png", 
+            "target": "sa.png"
+        }, 
+        {
+            "asset": "Flags/sb.png", 
+            "target": "sb.png"
+        }, 
+        {
+            "asset": "Flags/sc.png", 
+            "target": "sc.png"
+        }, 
+        {
+            "asset": "Flags/sd.png", 
+            "target": "sd.png"
+        }, 
+        {
+            "asset": "Flags/se.png", 
+            "target": "se.png"
+        }, 
+        {
+            "asset": "Flags/sg.png", 
+            "target": "sg.png"
+        }, 
+        {
+            "asset": "Flags/sh.png", 
+            "target": "sh.png"
+        }, 
+        {
+            "asset": "Flags/si.png", 
+            "target": "si.png"
+        }, 
+        {
+            "asset": "Flags/sj.png", 
+            "target": "sj.png"
+        }, 
+        {
+            "asset": "Flags/sk.png", 
+            "target": "sk.png"
+        }, 
+        {
+            "asset": "Flags/sl.png", 
+            "target": "sl.png"
+        }, 
+        {
+            "asset": "Flags/sm.png", 
+            "target": "sm.png"
+        }, 
+        {
+            "asset": "Flags/sn.png", 
+            "target": "sn.png"
+        }, 
+        {
+            "asset": "Flags/so.png", 
+            "target": "so.png"
+        }, 
+        {
+            "asset": "Flags/sr.png", 
+            "target": "sr.png"
+        }, 
+        {
+            "asset": "Flags/ss.png", 
+            "target": "ss.png"
+        }, 
+        {
+            "asset": "Flags/st.png", 
+            "target": "st.png"
+        }, 
+        {
+            "asset": "Flags/sv.png", 
+            "target": "sv.png"
+        }, 
+        {
+            "asset": "Flags/sx.png", 
+            "target": "sx.png"
+        }, 
+        {
+            "asset": "Flags/sy.png", 
+            "target": "sy.png"
+        }, 
+        {
+            "asset": "Flags/sz.png", 
+            "target": "sz.png"
+        }, 
+        {
+            "asset": "Flags/tc.png", 
+            "target": "tc.png"
+        }, 
+        {
+            "asset": "Flags/td.png", 
+            "target": "td.png"
+        }, 
+        {
+            "asset": "Flags/tf.png", 
+            "target": "tf.png"
+        }, 
+        {
+            "asset": "Flags/tg.png", 
+            "target": "tg.png"
+        }, 
+        {
+            "asset": "Flags/th.png", 
+            "target": "th.png"
+        }, 
+        {
+            "asset": "Flags/tj.png", 
+            "target": "tj.png"
+        }, 
+        {
+            "asset": "Flags/tk.png", 
+            "target": "tk.png"
+        }, 
+        {
+            "asset": "Flags/tl.png", 
+            "target": "tl.png"
+        }, 
+        {
+            "asset": "Flags/tm.png", 
+            "target": "tm.png"
+        }, 
+        {
+            "asset": "Flags/tn.png", 
+            "target": "tn.png"
+        }, 
+        {
+            "asset": "Flags/to.png", 
+            "target": "to.png"
+        }, 
+        {
+            "asset": "Flags/tr.png", 
+            "target": "tr.png"
+        }, 
+        {
+            "asset": "Flags/tt.png", 
+            "target": "tt.png"
+        }, 
+        {
+            "asset": "Flags/tv.png", 
+            "target": "tv.png"
+        }, 
+        {
+            "asset": "Flags/tw.png", 
+            "target": "tw.png"
+        }, 
+        {
+            "asset": "Flags/tz.png", 
+            "target": "tz.png"
+        }, 
+        {
+            "asset": "Flags/ua.png", 
+            "target": "ua.png"
+        }, 
+        {
+            "asset": "Flags/ug.png", 
+            "target": "ug.png"
+        }, 
+        {
+            "asset": "Flags/um.png", 
+            "target": "um.png"
+        }, 
+        {
+            "asset": "Flags/us.png", 
+            "target": "us.png"
+        }, 
+        {
+            "asset": "Flags/uy.png", 
+            "target": "uy.png"
+        }, 
+        {
+            "asset": "Flags/uz.png", 
+            "target": "uz.png"
+        }, 
+        {
+            "asset": "Flags/va.png", 
+            "target": "va.png"
+        }, 
+        {
+            "asset": "Flags/vc.png", 
+            "target": "vc.png"
+        }, 
+        {
+            "asset": "Flags/ve.png", 
+            "target": "ve.png"
+        }, 
+        {
+            "asset": "Flags/vg.png", 
+            "target": "vg.png"
+        }, 
+        {
+            "asset": "Flags/vi.png", 
+            "target": "vi.png"
+        }, 
+        {
+            "asset": "Flags/vn.png", 
+            "target": "vn.png"
+        }, 
+        {
+            "asset": "Flags/vu.png", 
+            "target": "vu.png"
+        }, 
+        {
+            "asset": "Flags/wf.png", 
+            "target": "wf.png"
+        }, 
+        {
+            "asset": "Flags/ws.png", 
+            "target": "ws.png"
+        }, 
+        {
+            "asset": "Flags/ye.png", 
+            "target": "ye.png"
+        }, 
+        {
+            "asset": "Flags/yt.png", 
+            "target": "yt.png"
+        }, 
+        {
+            "asset": "Flags/za.png", 
+            "target": "za.png"
+        }, 
+        {
+            "asset": "Flags/zm.png", 
+            "target": "zm.png"
+        }, 
+        {
+            "asset": "Flags/zw.png", 
+            "target": "zw.png"
+        }, 
+        {
+            "asset": "iphone.png", 
+            "target": "iphone.png"
+        }, 
+        {
+            "asset": "iphone@2x.png", 
+            "target": "iphone@2x.png"
+        }, 
+        {
+            "asset": "Default.png", 
+            "target": "Default.png"
+        }, 
+        {
+            "asset": "Default@2x.png", 
+            "target": "Default@2x.png"
+        }, 
+        {
+            "asset": "Default-568h@2x.png", 
+            "target": "Default-568h@2x.png"
+        }, 
+        {
+            "asset": "bar.png", 
+            "target": "bar.png"
+        }, 
+        {
+            "asset": "bar@2x.png", 
+            "target": "bar@2x.png"
+        }, 
+        {
+            "asset": "menu.png", 
+            "target": "menu.png"
+        }, 
+        {
+            "asset": "menu@2x.png", 
+            "target": "menu@2x.png"
+        }, 
+        {
+            "asset": "back.png", 
+            "target": "back.png"
+        }, 
+        {
+            "asset": "back@2x.png", 
+            "target": "back@2x.png"
+        }, 
+        {
+            "asset": "empty.png", 
+            "target": "empty.png"
+        }, 
+        {
+            "asset": "add.png", 
+            "target": "add.png"
+        }, 
+        {
+            "asset": "add@2x.png", 
+            "target": "add@2x.png"
+        }, 
+        {
+            "asset": "remove.png", 
+            "target": "remove.png"
+        }, 
+        {
+            "asset": "remove@2x.png", 
+            "target": "remove@2x.png"
+        }, 
+        {
+            "asset": "jacobs.png", 
+            "target": "jacobs.png"
+        }, 
+        {
+            "asset": "jacobs@2x.png", 
+            "target": "jacobs@2x.png"
+        }, 
+        {
+            "asset": "favorites.png", 
+            "target": "favorites.png"
+        }, 
+        {
+            "asset": "favorites@2x.png", 
+            "target": "favorites@2x.png"
+        }, 
+        {
+            "asset": "empty_search.png", 
+            "target": "empty_search.png"
+        }, 
+        {
+            "asset": "empty_search@2x.png", 
+            "target": "empty_search@2x.png"
+        }, 
+        {
+            "asset": "out_of_jacobs.png", 
+            "target": "out_of_jacobs.png"
+        }, 
+        {
+            "asset": "out_of_jacobs@2x.png", 
+            "target": "out_of_jacobs@2x.png"
+        }, 
+        {
+            "asset": "empty_favorites.png", 
+            "target": "empty_favorites.png"
+        }, 
+        {
+            "asset": "empty_favorites@2x.png", 
+            "target": "empty_favorites@2x.png"
+        }, 
+        {
+            "asset": "edit.png", 
+            "target": "edit.png"
+        }, 
+        {
+            "asset": "edit@2x.png", 
+            "target": "edit@2x.png"
+        }, 
+        {
+            "asset": "done.png", 
+            "target": "done.png"
+        }, 
+        {
+            "asset": "done@2x.png", 
+            "target": "done@2x.png"
+        }, 
+        {
+            "asset": "person.png", 
+            "target": "person.png"
+        }, 
+        {
+            "asset": "person@2x.png", 
+            "target": "person@2x.png"
+        }, 
+        {
+            "asset": "glasses.png", 
+            "target": "glasses.png"
+        }, 
+        {
+            "asset": "glasses@2x.png", 
+            "target": "glasses@2x.png"
+        }, 
+        {
+            "asset": "credits.png", 
+            "target": "credits.png"
+        }, 
+        {
+            "asset": "credits@2x.png", 
+            "target": "credits@2x.png"
+        }, 
+        {
+            "asset": "dima.png", 
+            "target": "dima.png"
+        }, 
+        {
+            "asset": "dima@2x.png", 
+            "target": "dima@2x.png"
+        }, 
+        {
+            "asset": "stefan.png", 
+            "target": "stefan.png"
+        }, 
+        {
+            "asset": "stefan@2x.png", 
+            "target": "stefan@2x.png"
+        }, 
+        {
+            "asset": "dimaPic.png", 
+            "target": "dimaPic.png"
+        }, 
+        {
+            "asset": "stefanPic.png", 
+            "target": "stefanPic.png"
+        }, 
+        {
+            "asset": "nyan.m4a", 
+            "target": "nyan.m4a"
+        }, 
+        {
+            "asset": "nerd.m4a", 
+            "target": "nerd.m4a"
+        }, 
+        {
+            "asset": "tab_favorites.png", 
+            "target": "tab_favorites.png"
+        }, 
+        {
+            "asset": "tab_favorites@2x.png", 
+            "target": "tab_favorites@2x.png"
+        }, 
+        {
+            "asset": "tab_search.png", 
+            "target": "tab_search.png"
+        }, 
+        {
+            "asset": "tab_search@2x.png", 
+            "target": "tab_search@2x.png"
+        }, 
+        {
+            "asset": "tab_credits.png", 
+            "target": "tab_credits.png"
+        }, 
+        {
+            "asset": "tab_credits@2x.png", 
+            "target": "tab_credits@2x.png"
+        }
+    ], 
+    "type": "app", 
+    "header_paths": [
+        {
+            "type": "iquote", 
+            "header_path": "jPeople-generated-files.hmap", 
+            "hmap": {}
+        }, 
+        {
+            "type": "I", 
+            "header_path": "jPeople-own-target-headers.hmap", 
+            "hmap": {}
+        }, 
+        {
+            "type": "I", 
+            "header_path": "jPeople-all-target-headers.hmap", 
+            "hmap": {}
+        }, 
+        {
+            "type": "iquote", 
+            "header_path": "jPeople-project-headers.hmap", 
+            "hmap": {
+                "DKDetailViewController.h": {
+                    "prefix": "jPeople/", 
+                    "suffix": "DKDetailViewController.h", 
+                    "key": "DKDetailViewController.h"
+                }, 
+                "DKAppDelegate.h": {
+                    "prefix": "jPeople/", 
+                    "suffix": "DKAppDelegate.h", 
+                    "key": "DKAppDelegate.h"
+                }, 
+                "jPeople-Prefix.pch": {
+                    "prefix": "jPeople/", 
+                    "suffix": "jPeople-Prefix.pch", 
+                    "key": "jPeople-Prefix.pch"
+                }, 
+                "Toast+UIView.h": {
+                    "prefix": "jPeople/", 
+                    "suffix": "Toast+UIView.h", 
+                    "key": "Toast+UIView.h"
+                }, 
+                "DKCountry.h": {
+                    "prefix": "jPeople/", 
+                    "suffix": "DKCountry.h", 
+                    "key": "DKCountry.h"
+                }, 
+                "DKFavoritesViewController.h": {
+                    "prefix": "jPeople/", 
+                    "suffix": "DKFavoritesViewController.h", 
+                    "key": "DKFavoritesViewController.h"
+                }, 
+                "DKCreditsViewController.h": {
+                    "prefix": "jPeople/", 
+                    "suffix": "DKCreditsViewController.h", 
+                    "key": "DKCreditsViewController.h"
+                }, 
+                "DKSearchViewController.h": {
+                    "prefix": "jPeople/", 
+                    "suffix": "DKSearchViewController.h", 
+                    "key": "DKSearchViewController.h"
+                }
+            }
+        }
+    ], 
+    "modules": [], 
+    "version": "1", 
+    "flags": [
+        "-DNS_BLOCK_ASSERTIONS=1", 
+        "-fwritable-strings", 
+        "-fobjc-arc", 
+        "-fasm-blocks", 
+        {
+            "flag": "-std=gnu99", 
+            "not_type": "c++"
+        }, 
+        {
+            "flag": "-fgnu-keywords", 
+            "not_type": "c++"
+        }, 
+        "-fno-asm", 
+        "-fpascal-strings", 
+        "-Wempty-body", 
+        "-Wno-deprecated-declarations", 
+        "-Wreturn-type", 
+        "-Wswitch", 
+        "-Wparentheses", 
+        "-Wformat", 
+        "-Wuninitialized", 
+        "-Wunused-value", 
+        "-Wunused-variable", 
+        {
+            "flag": "-Winvalid-offsetof", 
+            "type": "c++"
+        }, 
+        {
+            "flag": "-Wprotocol", 
+            "type": "objc"
+        }
+    ], 
+    "deps": [
+        "UIKit", 
+        "UIKit", 
+        "Foundation", 
+        "AVFoundation", 
+        "AddressBook", 
+        "MessageUI", 
+        "CoreGraphics"
+    ], 
+    "config": {
+        "APPLICATION_IDENTIFIER": "dc.jpeople", 
+        "TEMPLATE_VALUES": {
+            "EXECUTABLE_NAME": "jPeople", 
+            "PRODUCT_NAME": "jPeople"
+        }, 
+        "LONG_VERSION": "1.0", 
+        "SHORT_VERSION": "1.0", 
+        "APPLICATION_NAME": "jPeople", 
+        "APPLICATION_FULL_NAME": "jPeople"
+    }
+}

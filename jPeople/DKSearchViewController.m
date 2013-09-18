@@ -16,9 +16,19 @@
         searchField.hidden = YES;
         background.image = [UIImage imageNamed:@"out_of_jacobs"];
     }
-    else if (foundPeople.count == 0) {
-        searchField.hidden = NO;
-        background.image = [UIImage imageNamed:@"empty_search"];
+    else if (foundPeople) {
+        if (foundPeople.count == 0) {
+            searchField.hidden = NO;
+            background.image = [UIImage imageNamed:@"empty_search"];
+        }
+    }
+}
+
+-(void) viewWillDisappear:(BOOL)animated {
+    
+    for (ALAlertBanner* banner in [ALAlertBanner alertBannersInView:self.view]) {
+        [banner hide];
+         
     }
 }
 
@@ -29,10 +39,24 @@
     self.title = @"Search"; //Tabbar
     self.navigationItem.title = @"jPeople"; // Navbar
     
+    if (!SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
+        [searchField setBarStyle:UIBarStyleBlack];
+    }
     
-    // Search bar
-    searchField.backgroundImage = [UIImage imageNamed:@"bar"];
-    [((UITextField*)[searchField.subviews objectAtIndex:1]) setKeyboardAppearance:UIKeyboardAppearanceAlert];
+    /*//Swipe between tabs
+    UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(tappedRightButton:)];
+    [swipeLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
+    [self.view addGestureRecognizer:swipeLeft];
+    
+    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(tappedLeftButton:)];
+    [swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
+    [self.view addGestureRecognizer:swipeRight];*/
+    
+    //Hack to remove header on iOS7
+    CGRect frame = searchResults.tableHeaderView.frame;
+    frame.size.height = 1;
+    UIView *headerView = [[UIView alloc] initWithFrame:frame];
+    [searchResults setTableHeaderView:headerView];
     
     // Left
     UIButton *a1 = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -55,14 +79,15 @@
     [searchField setShowsCancelButton:NO animated:YES];
     [searchField resignFirstResponder];
     
-    UIActionSheet *menu = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"E-mail all", @"Add all to favorites", @"Export to Contacts", nil];
+    UIActionSheet *menu = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"E-mail all", @"Add all to Favorites", @"Export to Contacts", nil];
     [menu showFromTabBar:self.tabBarController.tabBar];
 
 }
 
+
 -(BOOL) isJacobs {
-#warning Check for Jacobs somehow different (this one freezes UI badly).
-    return [NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://majestix.gislab.jacobs-university.de"] encoding:NSUTF8StringEncoding error:nil] != nil;
+    
+    return ([NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://dcode.tk/php/check_jacobs.php"] encoding:NSUTF8StringEncoding error:nil] != nil);
 }
 
 -(BOOL) contactExistsWithFirstname:(NSString *)first lastname:(NSString *)last {
@@ -106,7 +131,9 @@
     searchResults.allowsSelection = YES;
     searchResults.scrollEnabled = YES;
     [self.view hideToastActivity];
-    [self.view makeToast:@"Success!"];
+    
+    ALAlertBanner *banner = [ALAlertBanner alertBannerForView:self.view style:ALAlertBannerStyleSuccess position:ALAlertBannerPositionTop title:@"Success!" subtitle:nil];
+    [banner show];
 }
 
 -(void) checkContactsPermission {
@@ -114,19 +141,31 @@
     
     if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusNotDetermined) {
         ABAddressBookRequestAccessWithCompletion(addressBookRef, ^(bool granted, CFErrorRef error) {
-            [self allToContacts:addressBookRef];
+            if (granted) {
+                NSLog(@"Granted");
+                [self allToContacts:addressBookRef];
+            }
+            else {
+                NSLog(@"Declined");
+                [self.view hideToastActivity];
+                ALAlertBanner *banner = [ALAlertBanner alertBannerForView:self.view style:ALAlertBannerStyleFailure position:ALAlertBannerPositionTop title:@"Ouch!" subtitle:@"jPeople doesn't have permissions to modify the contacts :("];
+                [banner show];
+            }
         });
     }
     else if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusAuthorized) {
         [self allToContacts:addressBookRef];
     }
     else {
-        [self.view makeToast:@"jPeople doesn't have permission to access Contacts :(" duration:1.5 position:@"bottom"];
+        ALAlertBanner *banner = [ALAlertBanner alertBannerForView:self.view style:ALAlertBannerStyleFailure position:ALAlertBannerPositionTop title:@"Ouch!" subtitle:@"jPeople doesn't have permissions to modify the contacts :("];
+        [banner show];
+        [self.view hideToastActivity];
     }
 }
 
 -(void) allToContacts:(ABAddressBookRef) addressBook {
-
+    
+    NSLog(@"Adding to contacts...");
     BOOL exists = FALSE;
     
     for (NSDictionary *dude in foundPeople) {
@@ -164,16 +203,20 @@
         else {
             exists = TRUE;
         }
-        
-        [self.view hideToastActivity];
     }
     
     ABAddressBookSave(addressBook, nil); //save the records
     
-    if (!exists)
-        [self.view makeToast:@"Success!" duration:1.5 position:@"bottom"];
-    else
-        [self.view makeToast:@"Some contacts already exist and were not added." duration:1.5 position:@"bottom"];
+    
+    [self.view hideToastActivity];
+    if (!exists) {
+        ALAlertBanner *banner = [ALAlertBanner alertBannerForView:self.view style:ALAlertBannerStyleSuccess position:ALAlertBannerPositionTop title:@"Success!" subtitle:nil];
+        [banner show];
+    }
+    else {
+        ALAlertBanner *banner = [ALAlertBanner alertBannerForView:self.view style:ALAlertBannerStyleSuccess position:ALAlertBannerPositionTop title:@"Success!" subtitle:@"Some people were already in the contact list and were not added."];
+        [banner show];
+    }
 }
 
 #pragma mark - Table view data source
@@ -261,14 +304,15 @@
     
     if (searchBar.text.length < 3)
     {
-        [self.view makeToast:@"Please, enter more than 3 characters to search." duration:1.5 position:@"bottom"];
+        ALAlertBanner *banner = [ALAlertBanner alertBannerForView:self.view style:ALAlertBannerStyleNotify position:ALAlertBannerPositionTop title:@"Please, enter > 3 characters to search!" subtitle:nil];
+        [banner show];
         [self searchBarCancelButtonClicked:searchBar];
         return;
     }
     
     [foundPeople removeAllObjects];
     
-    NSString *searchQuery = [NSString stringWithFormat:@"http://majestix.gislab.jacobs-university.de/jPeople/ajax.php?action=fullAutoComplete&str=%@",CFURLCreateStringByAddingPercentEscapes(NULL,(__bridge CFStringRef)[searchBar text],NULL,(CFStringRef) @"!*'();:@&=+$,/?%#[]",kCFStringEncodingUTF8)];
+    NSString *searchQuery = [NSString stringWithFormat:@"http://dcode.tk/php/redirect.php?action=fullAutoComplete&str=%@",CFURLCreateStringByAddingPercentEscapes(NULL,(__bridge CFStringRef)[searchBar text],NULL,(CFStringRef) @"!*'();:@&=+$,/?%#[]",kCFStringEncodingUTF8)];
     
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:searchQuery]];
@@ -281,7 +325,8 @@
         
         if (error != nil)
         {
-            [self.view makeToast:@"Seems like there's a trouble with your Internet connection... Try again later?" duration:1.5 position:@"bottom"];
+            ALAlertBanner *banner = [ALAlertBanner alertBannerForView:self.view style:ALAlertBannerStyleFailure position:ALAlertBannerPositionTop title:@"Ouch!" subtitle:@"Looks like you have a problem with Internet connection... Check it and try again later? :)"];
+            [banner show];
             [foundPeople removeAllObjects];
             [searchResults reloadData];
             return;
@@ -360,7 +405,8 @@
     
     else
     {
-        [self.view makeToast:@"There are no people in the list right now. Please, add some people before calling group actions." duration:1.5 position:@"bottom"];
+        ALAlertBanner *banner = [ALAlertBanner alertBannerForView:self.view style:ALAlertBannerStyleFailure position:ALAlertBannerPositionTop title:@"Ouch!" subtitle:@"The list is empty right now. Please, add someone before calling the group actions."];
+        [banner show];
     }
     
 }
@@ -369,6 +415,8 @@
 
 - (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
 {
+    ALAlertBanner *banner;
+    
     switch (result)
     {
         case MFMailComposeResultCancelled:
@@ -376,15 +424,18 @@
             break;
         case MFMailComposeResultSaved:
             NSLog(@"Mail saved: you saved the email message in the drafts folder.");
-            [self.view makeToast:@"Saved in drafts." duration:1.5 position:@"bottom"];
+            banner = [ALAlertBanner alertBannerForView:self.view style:ALAlertBannerStyleSuccess position:ALAlertBannerPositionTop title:@"Saved in drafts.." subtitle:nil];
+            [banner show];
             break;
         case MFMailComposeResultSent:
             NSLog(@"Mail send: the email message is queued in the outbox. It is ready to send.");
-            [self.view makeToast:@"Message sent! ;)" duration:1.5 position:@"bottom"];
+            banner = [ALAlertBanner alertBannerForView:self.view style:ALAlertBannerStyleSuccess position:ALAlertBannerPositionTop title:@"Message sent! ;)" subtitle:nil];
+            [banner show];
             break;
         case MFMailComposeResultFailed:
             NSLog(@"Mail failed: the email message was not saved or queued, possibly due to an error.");
-            [self.view makeToast:@"Sending failed. Maybe Internet problems? :(" duration:1.5 position:@"bottom"];
+            banner = [ALAlertBanner alertBannerForView:self.view style:ALAlertBannerStyleFailure position:ALAlertBannerPositionTop title:@"Ouch!" subtitle:@"Sending failed! Maybe Internet problems? :("];
+            [banner show];
             break;
         default:
             NSLog(@"Mail not sent.");
@@ -393,6 +444,60 @@
     
     // Remove the mail view
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)tappedRightButton:(id)sender
+{
+    int selectedIndex = [self.tabBarController selectedIndex];
+    
+    if (selectedIndex + 1 >= [[self.tabBarController viewControllers] count]) {
+        return;
+    }
+    
+    /*
+     UIView * fromView = self.view;
+    UIView * toView = [[self.tabBarController.viewControllers objectAtIndex:selectedIndex+1] view];
+    
+    // Transition using a page curl.
+    [UIView transitionFromView:fromView
+                        toView:toView
+                      duration:0.5
+                       options:UIViewAnimationOptionTransitionFlipFromRight
+                    completion:^(BOOL finished) {
+                        if (finished) {
+                            self.tabBarController.selectedIndex = selectedIndex+1;
+                        }
+                    }];
+     */
+
+    self.tabBarController.selectedIndex = selectedIndex+1;
+}
+
+- (IBAction)tappedLeftButton:(id)sender
+{
+    int selectedIndex = [self.tabBarController selectedIndex];
+    
+    if (selectedIndex - 1 < 0) {
+        return;
+    }
+    
+    /*
+     UIView * fromView = self.view;
+    UIView * toView = [[self.tabBarController.viewControllers objectAtIndex:selectedIndex-1] view];
+    
+    // Transition using a page curl.
+    [UIView transitionFromView:fromView
+                        toView:toView
+                      duration:0.5
+                       options:UIViewAnimationOptionTransitionFlipFromLeft
+                    completion:^(BOOL finished) {
+                        if (finished) {
+                            self.tabBarController.selectedIndex = selectedIndex-1;
+                        }
+                    }];
+     */
+
+    self.tabBarController.selectedIndex = selectedIndex-1;
 }
 
 @end

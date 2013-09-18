@@ -13,3 +13,7 @@
 @property (strong, nonatomic) UIWindow *window;
 
 @end
+
+// TODO before push:
+
+// * Banner dismissing after changing VC issue

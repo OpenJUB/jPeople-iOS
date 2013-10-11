@@ -12,12 +12,9 @@
 
 @synthesize person;
 
--(void) viewWillUnload {
-    for (ALAlertBanner* banner in [ALAlertBanner alertBannersInView:self.view]) {
-        [banner removeFromSuperview];
-    }
-    
-    [super viewWillUnload];
+-(void) viewWillDisappear:(BOOL)animated {
+    [ALAlertBanner forceHideAll];
+    [super viewWillDisappear:animated];
 }
 
 -(void) viewDidLoad {

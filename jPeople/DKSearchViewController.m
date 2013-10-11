@@ -25,11 +25,8 @@
 }
 
 -(void) viewWillDisappear:(BOOL)animated {
-    
-    for (ALAlertBanner* banner in [ALAlertBanner alertBannersInView:self.view]) {
-        [banner hide];
-         
-    }
+    [ALAlertBanner forceHideAll];
+    [super viewWillDisappear:animated];
 }
 
 - (void)viewDidLoad
@@ -87,7 +84,7 @@
 
 -(BOOL) isJacobs {
     
-    return ([NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://dcode.tk/php/check_jacobs.php"] encoding:NSUTF8StringEncoding error:nil] != nil);
+    return ([NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://majestix.gislab.jacobs-university.de"] encoding:NSUTF8StringEncoding error:nil] != nil);
 }
 
 -(BOOL) contactExistsWithFirstname:(NSString *)first lastname:(NSString *)last {
@@ -312,7 +309,7 @@
     
     [foundPeople removeAllObjects];
     
-    NSString *searchQuery = [NSString stringWithFormat:@"http://dcode.tk/php/redirect.php?action=fullAutoComplete&str=%@",CFURLCreateStringByAddingPercentEscapes(NULL,(__bridge CFStringRef)[searchBar text],NULL,(CFStringRef) @"!*'();:@&=+$,/?%#[]",kCFStringEncodingUTF8)];
+    NSString *searchQuery = [NSString stringWithFormat:@"http://jpeople.user.jacobs-university.de/ajax.php?action=fullAutoComplete&str=%@",CFURLCreateStringByAddingPercentEscapes(NULL,(__bridge CFStringRef)[searchBar text],NULL,(CFStringRef) @"!*'();:@&=+$,/?%#[]",kCFStringEncodingUTF8)];
     
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:searchQuery]];

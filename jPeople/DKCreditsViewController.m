@@ -14,9 +14,9 @@
 
 @implementation DKCreditsViewController
 
--(void) viewWillUnload {
-    [ALAlertBanner hideAllAlertBanners];
-    [super viewWillUnload];
+-(void) viewWillDisappear:(BOOL)animated {
+    [ALAlertBanner forceHideAll];
+    [super viewWillDisappear:animated];
 }
 
 - (void)viewDidLoad

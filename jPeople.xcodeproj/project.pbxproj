@@ -653,6 +653,11 @@
 		0AF358AE17E9F25E0090548C /* bannerNotify@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AF358A417E9F25E0090548C /* bannerNotify@2x.png */; };
 		0AF358AF17E9F25E0090548C /* bannerSuccess.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AF358A517E9F25E0090548C /* bannerSuccess.png */; };
 		0AF358B017E9F25E0090548C /* bannerSuccess@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AF358A617E9F25E0090548C /* bannerSuccess@2x.png */; };
+		0AF6530C180887A9001E344F /* iphone@2x-ios7.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AF65308180887A9001E344F /* iphone@2x-ios7.png */; };
+		0AF6530D180887A9001E344F /* spotlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AF65309180887A9001E344F /* spotlight.png */; };
+		0AF6530E180887A9001E344F /* spotlight@2x-ios7.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AF6530A180887A9001E344F /* spotlight@2x-ios7.png */; };
+		0AF6530F180887A9001E344F /* spotlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AF6530B180887A9001E344F /* spotlight@2x.png */; };
+		0AF6531118088831001E344F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AF6531018088831001E344F /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1315,6 +1320,11 @@
 		0AF358A417E9F25E0090548C /* bannerNotify@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bannerNotify@2x.png"; sourceTree = "<group>"; };
 		0AF358A517E9F25E0090548C /* bannerSuccess.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bannerSuccess.png; sourceTree = "<group>"; };
 		0AF358A617E9F25E0090548C /* bannerSuccess@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bannerSuccess@2x.png"; sourceTree = "<group>"; };
+		0AF65308180887A9001E344F /* iphone@2x-ios7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone@2x-ios7.png"; sourceTree = "<group>"; };
+		0AF65309180887A9001E344F /* spotlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spotlight.png; sourceTree = "<group>"; };
+		0AF6530A180887A9001E344F /* spotlight@2x-ios7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spotlight@2x-ios7.png"; sourceTree = "<group>"; };
+		0AF6530B180887A9001E344F /* spotlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spotlight@2x.png"; sourceTree = "<group>"; };
+		0AF6531018088831001E344F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = jPeople/Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1990,6 +2000,7 @@
 		0A6C321017BD4BB9005FE944 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				0AF6531018088831001E344F /* Images.xcassets */,
 				0A8ED7F217BD5B9000542B6A /* nerd.m4a */,
 				0A6C321717BD581A005FE944 /* nyan.m4a */,
 				0A96334617B7EB1C005CA8ED /* Default-568h@2x.png */,
@@ -1997,6 +2008,10 @@
 				0A96334217B7EB0D005CA8ED /* Default.png */,
 				0A96334017B7E665005CA8ED /* iphone@2x.png */,
 				0A96333E17B7E656005CA8ED /* iphone.png */,
+				0AF65308180887A9001E344F /* iphone@2x-ios7.png */,
+				0AF65309180887A9001E344F /* spotlight.png */,
+				0AF6530A180887A9001E344F /* spotlight@2x-ios7.png */,
+				0AF6530B180887A9001E344F /* spotlight@2x.png */,
 				0A96334817B7EDA2005CA8ED /* bar.png */,
 				0A96334917B7EDA2005CA8ED /* bar@2x.png */,
 				0A8ED7F417BD5F2F00542B6A /* tab_favorites.png */,
@@ -2126,6 +2141,7 @@
 			files = (
 				0A64D8B217375B5000B9A679 /* InfoPlist.strings in Resources */,
 				0A64D8C117375B5000B9A679 /* MainStoryboard.storyboard in Resources */,
+				0AF6530D180887A9001E344F /* spotlight.png in Resources */,
 				0A64DB2517377D5D00B9A679 /* _African-Union.png in Resources */,
 				0A64DB2617377D5D00B9A679 /* _Alderney.png in Resources */,
 				0A64DB2717377D5D00B9A679 /* _Arab League.png in Resources */,
@@ -2143,6 +2159,7 @@
 				0A64DB3317377D5D00B9A679 /* _IHO.png in Resources */,
 				0A64DB3417377D5D00B9A679 /* _Islamic Conference.png in Resources */,
 				0A64DB3517377D5D00B9A679 /* _Kosovo.png in Resources */,
+				0AF6530C180887A9001E344F /* iphone@2x-ios7.png in Resources */,
 				0A64DB3617377D5D00B9A679 /* _NATO.png in Resources */,
 				0A64DB3717377D5D00B9A679 /* _Northern Cyprus.png in Resources */,
 				0A64DB3817377D5D00B9A679 /* _Northern Ireland.png in Resources */,
@@ -2445,6 +2462,7 @@
 				0A64DC5E17377D5D00B9A679 /* cy@2x.png in Resources */,
 				0A64DC5F17377D5D00B9A679 /* cz@2x.png in Resources */,
 				0A64DC6017377D5D00B9A679 /* de@2x.png in Resources */,
+				0AF6530F180887A9001E344F /* spotlight@2x.png in Resources */,
 				0A64DC6117377D5D00B9A679 /* dj@2x.png in Resources */,
 				0AF358AD17E9F25E0090548C /* bannerNotify.png in Resources */,
 				0A64DC6217377D5D00B9A679 /* dk@2x.png in Resources */,
@@ -2457,6 +2475,7 @@
 				0A64DC6917377D5D00B9A679 /* eh@2x.png in Resources */,
 				0A64DC6A17377D5D00B9A679 /* er@2x.png in Resources */,
 				0A64DC6B17377D5D00B9A679 /* es@2x.png in Resources */,
+				0AF6530E180887A9001E344F /* spotlight@2x-ios7.png in Resources */,
 				0A64DC6C17377D5D00B9A679 /* et@2x.png in Resources */,
 				0A64DC6D17377D5D00B9A679 /* fi@2x.png in Resources */,
 				0A64DC6E17377D5D00B9A679 /* fj@2x.png in Resources */,
@@ -2547,6 +2566,7 @@
 				0A64DCC217377D5D00B9A679 /* mv@2x.png in Resources */,
 				0A64DCC317377D5D00B9A679 /* mw@2x.png in Resources */,
 				0A64DCC417377D5D00B9A679 /* mx@2x.png in Resources */,
+				0AF6531118088831001E344F /* Images.xcassets in Resources */,
 				0A64DCC517377D5D00B9A679 /* my@2x.png in Resources */,
 				0A64DCC617377D5D00B9A679 /* mz@2x.png in Resources */,
 				0A64DCC717377D5D00B9A679 /* na@2x.png in Resources */,
@@ -2857,11 +2877,14 @@
 		0A64D8D317375B5000B9A679 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "jPeople/jPeople-Prefix.pch";
 				INFOPLIST_FILE = "jPeople/jPeople-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "FBA37685-A710-4598-AB1C-4A4E8BE5E0F2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2869,11 +2892,14 @@
 		0A64D8D417375B5000B9A679 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "jPeople/jPeople-Prefix.pch";
 				INFOPLIST_FILE = "jPeople/jPeople-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "FBA37685-A710-4598-AB1C-4A4E8BE5E0F2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -237,6 +237,15 @@
     dispatch_semaphore_signal(semaphore);
 }
 
+-(void) forceHideAll {
+    for (UIView *view in self.bannerViews) {
+        for (ALAlertBanner* banner in [self alertBannersInView:view]) {
+            [banner removeFromSuperview];
+            [self alertBannerDidHide:banner inView:view];
+        }
+    }
+}
+
 # pragma mark -
 # pragma mark Instance Methods
 

@@ -112,6 +112,8 @@ typedef enum {
  */
 - (void)hide;
 
++(void) forceHideAll;
+
 /**
  Returns an array of all banners within a certain view.
  */

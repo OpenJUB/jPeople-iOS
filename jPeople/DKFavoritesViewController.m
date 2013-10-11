@@ -19,11 +19,8 @@
 }
 
 -(void) viewWillDisappear:(BOOL)animated {
-    
-    for (ALAlertBanner* banner in [ALAlertBanner alertBannersInView:self.view]) {
-        [banner hide];
-         
-    }
+    [ALAlertBanner forceHideAll];
+    [super viewWillDisappear:animated];
 }
 
 - (void)viewDidLoad
@@ -108,7 +105,7 @@
     favoritesTable.allowsSelection = NO;
     favoritesTable.scrollEnabled = NO;
 
-    NSString *query = @"http://dcode.tk/php/redirect.php?action=fullAutoComplete&str=account:";
+    NSString *query = @"http://jpeople.user.jacobs-university.de/ajax.php?action=fullAutoComplete&str=account:";
     
     for (int k = 0; k < [favorites count]; k++)
     {

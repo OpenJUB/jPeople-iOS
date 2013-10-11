@@ -767,4 +767,8 @@ lineBreakMode:mode].height : 0.f;
     return descriptionString;
 }
 
++(void) forceHideAll {
+    [[ALAlertBannerManager sharedManager] forceHideAll];
+}
+
 @end
